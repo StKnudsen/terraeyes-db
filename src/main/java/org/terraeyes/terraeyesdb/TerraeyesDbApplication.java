@@ -6,14 +6,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
-@RestController
 public class TerraeyesDbApplication
 {
-  @GetMapping("/test")
-  public String test() {
-    return "Hellow masterssss";
-  }
-  
   public static void main(String[] args)
   {
     SpringApplication.run(TerraeyesDbApplication.class, args);
