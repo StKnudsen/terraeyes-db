@@ -52,6 +52,37 @@ public class CarbonDioxideDaoImpl extends DaoConnection implements CarbonDioxide
 
   @Override public List<CarbonDioxide> getCarbonDioxideForEui(String eui)
   {
+    List<CarbonDioxide> carbonDioxides = new ArrayList<>();
+
+    String QUERY = "SELECT * FROM terraeyes.measurement WHERE eui=?";
+
+    try (Connection connection = getConnection())
+    {
+      PreparedStatement statement = connection.prepareStatement(QUERY);
+
+      statement.setString(1, eui);
+
+      ResultSet resultSet = statement.executeQuery();
+
+      while (resultSet.next())
+      {
+        CarbonDioxide carbonDioxide = new CarbonDioxide(
+            resultSet.getInt("id"),
+            resultSet.getString("eui"),
+            resultSet.getString("userId"),
+            resultSet.getInt("carbondioxide")
+        );
+
+        carbonDioxides.add(carbonDioxide);
+      }
+
+      return carbonDioxides;
+    }
+    catch (SQLException e)
+    {
+      System.out.println("SQL exception for get carbon dioxide (eui): " + e.getMessage());
+    }
+
     return null;
   }
 }

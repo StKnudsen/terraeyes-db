@@ -14,14 +14,15 @@ public class CarbonDioxideControllerImpl implements CarbonDioxideController
 {
   @Resource CarbonDioxideDao carbonDioxideDao;
 
-  @GetMapping("/carbondioxide/{userId}")
+  @GetMapping("/carbondioxides/{userId}")
   @Override public List<CarbonDioxide> getCarbonDioxidesForUser(@PathVariable String userId)
   {
     return carbonDioxideDao.getCarbonDioxideForUser(userId);
   }
 
-  @Override public List<CarbonDioxide> getCarbonDioxidesForEui(String eui)
+  @GetMapping("/carbondioxides/{userId}/{eui}")
+  @Override public List<CarbonDioxide> getCarbonDioxidesForEui(@PathVariable String eui)
   {
-    return null;
+    return carbonDioxideDao.getCarbonDioxideForEui(eui);
   }
 }
