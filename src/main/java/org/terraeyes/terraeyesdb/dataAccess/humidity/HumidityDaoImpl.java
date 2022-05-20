@@ -3,7 +3,6 @@ package org.terraeyes.terraeyesdb.dataAccess.humidity;
 import org.springframework.stereotype.Repository;
 import org.terraeyes.terraeyesdb.dataAccess.DaoConnection;
 import org.terraeyes.terraeyesdb.models.Humidity;
-import org.terraeyes.terraeyesdb.models.Temperature;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -19,8 +18,7 @@ public class HumidityDaoImpl extends DaoConnection implements HumidityDao
   {
     List<Humidity> humidityList = new ArrayList<>();
 
-    String QUERY = "SELECT * FROM terraeyes.measurement "
-        + "WHERE userId=?";
+    String QUERY = "SELECT * FROM terraeyes.measurement WHERE userId=?";
 
     try (Connection connection = getConnection())
     {
