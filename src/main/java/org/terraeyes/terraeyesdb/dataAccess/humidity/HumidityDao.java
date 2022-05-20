@@ -1,7 +1,5 @@
 package org.terraeyes.terraeyesdb.dataAccess.humidity;
 
-
-
 import org.terraeyes.terraeyesdb.models.Humidity;
 
 import java.util.List;

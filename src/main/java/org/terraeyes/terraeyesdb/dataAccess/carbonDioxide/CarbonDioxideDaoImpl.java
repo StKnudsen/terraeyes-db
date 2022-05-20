@@ -1,8 +1,8 @@
-package org.terraeyes.terraeyesdb.dataAccess.humidity;
+package org.terraeyes.terraeyesdb.dataAccess.carbonDioxide;
 
 import org.springframework.stereotype.Repository;
 import org.terraeyes.terraeyesdb.dataAccess.DaoConnection;
-import org.terraeyes.terraeyesdb.models.Humidity;
+import org.terraeyes.terraeyesdb.models.CarbonDioxide;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -12,11 +12,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Repository
-public class HumidityDaoImpl extends DaoConnection implements HumidityDao
+public class CarbonDioxideDaoImpl extends DaoConnection implements CarbonDioxideDao
 {
-  @Override public List<Humidity> getHumidityForUser(String userId)
+  @Override public List<CarbonDioxide> getCarbonDioxideForUser(String userId)
   {
-    List<Humidity> humidityList = new ArrayList<>();
+    List<CarbonDioxide> carbonDioxides = new ArrayList<>();
 
     String QUERY = "SELECT * FROM terraeyes.measurement WHERE userId=?";
 
@@ -30,32 +30,31 @@ public class HumidityDaoImpl extends DaoConnection implements HumidityDao
 
       while (resultSet.next())
       {
-        Humidity humidity = new Humidity(
-            resultSet.getInt("id"),
-            resultSet.getString("eui"),
-            resultSet.getString("userId"),
-            resultSet.getBigDecimal("humidity")
+        CarbonDioxide carbonDioxide = new CarbonDioxide(
+          resultSet.getInt("id"),
+          resultSet.getString("eui"),
+          resultSet.getString("userId"),
+          resultSet.getInt("carbondioxide")
         );
 
-        humidityList.add(humidity);
+        carbonDioxides.add(carbonDioxide);
       }
 
-      return humidityList;
+      return carbonDioxides;
     }
     catch (SQLException e)
     {
-      System.out.println("SQL exception for get humidity (userId): " + e.getMessage());
+      System.out.println("SQL exception for get carbon dioxide (userId): " + e.getMessage());
     }
 
     return null;
   }
 
-  @Override public List<Humidity> getHumidityForEui(String eui)
+  @Override public List<CarbonDioxide> getCarbonDioxideForEui(String eui)
   {
-    List<Humidity> humidityList = new ArrayList<>();
+    List<CarbonDioxide> carbonDioxides = new ArrayList<>();
 
-    String QUERY = "SELECT * FROM terraeyes.measurement "
-        + "WHERE eui=?";
+    String QUERY = "SELECT * FROM terraeyes.measurement WHERE eui=?";
 
     try (Connection connection = getConnection())
     {
@@ -67,21 +66,21 @@ public class HumidityDaoImpl extends DaoConnection implements HumidityDao
 
       while (resultSet.next())
       {
-        Humidity humidity = new Humidity(
+        CarbonDioxide carbonDioxide = new CarbonDioxide(
             resultSet.getInt("id"),
             resultSet.getString("eui"),
             resultSet.getString("userId"),
-            resultSet.getBigDecimal("humidity")
+            resultSet.getInt("carbondioxide")
         );
 
-        humidityList.add(humidity);
+        carbonDioxides.add(carbonDioxide);
       }
 
-      return humidityList;
+      return carbonDioxides;
     }
     catch (SQLException e)
     {
-      System.out.println("SQL exception for get humidity (eui): " + e.getMessage());
+      System.out.println("SQL exception for get carbon dioxide (eui): " + e.getMessage());
     }
 
     return null;
