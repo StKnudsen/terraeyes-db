@@ -14,11 +14,11 @@ public class TemperatureControllerImpl implements TemperatureController
 {
   @Resource TemperaturDao temperaturDao;
 
-  @PostMapping("/temperature")
+  /* @PostMapping("/temperature")
   @Override public boolean setTemperature(@RequestBody Temperature temperature)
   {
     return temperaturDao.setTemperature(temperature);
-  }
+  } */
 
   @Override public List<Temperature> getTemperaturesForUser(int userId)
   {

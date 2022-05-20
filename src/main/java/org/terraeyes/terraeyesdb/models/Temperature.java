@@ -12,7 +12,7 @@ public class Temperature extends Measurement
     this.temperature = temperature;
   }*/
 
-  public Temperature(String eui, int userId, float temperature)
+  public Temperature(String eui, String userId, float temperature)
   {
     super(eui, userId);
     this.temperature = temperature;

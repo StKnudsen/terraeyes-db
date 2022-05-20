@@ -1,16 +1,44 @@
-package org.terraeyes.terraeyesdb.dataAccess.temperatur;
+package org.terraeyes.terraeyesdb.dataAccess.measurement;
 
 import org.springframework.stereotype.Repository;
 import org.terraeyes.terraeyesdb.dataAccess.DaoConnection;
-import org.terraeyes.terraeyesdb.models.Temperature;
+import org.terraeyes.terraeyesdb.models.AllMeasurements;
 
-import java.sql.*;
-import java.util.ArrayList;
-import java.util.List;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 
 @Repository
-public class TemperaturDaoImpl extends DaoConnection implements TemperaturDao
+public class MeasurementDaoImpl extends DaoConnection implements MeasurementDao
 {
+  @Override public boolean setMeasurement(AllMeasurements allMeasurements)
+  {
+    String QUERY = "INSERT INTO terraeyes.measurement "
+        + "(eui, userId, temperature, humidity, carbondioxide)"
+        + "VALUES (?, ?, ?, ?, ?);";
+
+    try (Connection connection = getConnection())
+    {
+      PreparedStatement statement = connection.prepareStatement(QUERY);
+
+      statement.setString(1, allMeasurements.getEui());
+      statement.setString(2, allMeasurements.getUserId());
+      statement.setBigDecimal(3, allMeasurements.getTemperature());
+      statement.setBigDecimal(4, allMeasurements.getHumidity());
+      statement.setInt(5, allMeasurements.getCarbonDioxide());
+
+      statement.execute();
+
+      return true;
+    }
+    catch (SQLException e)
+    {
+      System.out.println("SQL exception for set temperature: " + e.getMessage());
+    }
+    return false;
+  }
+
+
   /*@Override
   public boolean setTemperature(Temperature temperature)
   {
@@ -47,17 +75,4 @@ public class TemperaturDaoImpl extends DaoConnection implements TemperaturDao
 
     return false;
   } */
-
-  @Override public List<Temperature> getTemperaturesForUser(int userId)
-  {
-    List<Temperature> temperatures = new ArrayList<>();
-
-
-    return null;
-  }
-
-  @Override public List<Temperature> getTemperaturesForEui(String eui)
-  {
-    return null;
-  }
 }

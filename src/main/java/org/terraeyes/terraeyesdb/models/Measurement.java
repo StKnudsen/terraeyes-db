@@ -6,21 +6,21 @@ public abstract class Measurement
 {
   private int id;
   private String eui;
-  private int userId;
+  private String userId;
   //private Timestamp timestamp;
 
   public Measurement()
   {
   }
 
-  /*public Measurement(String eui, int userId, Timestamp timestamp)
+  /*public Measurement(String eui, String userId, Timestamp timestamp)
   {
     this.eui = eui;
     this.userId = userId;
     this.timestamp = timestamp;
   }*/
 
-  public Measurement(String eui, int userId)
+  public Measurement(String eui, String userId)
   {
     this.eui = eui;
     this.userId = userId;
@@ -36,7 +36,7 @@ public abstract class Measurement
     return eui;
   }
 
-  public int getUserId()
+  public String getUserId()
   {
     return userId;
   }
