@@ -1,19 +1,23 @@
-package org.terraeyes.terraeyesdb.dataAccess.temperatur;
+package org.terraeyes.terraeyesdb.dataAccess.humidity;
 
 import org.springframework.stereotype.Repository;
 import org.terraeyes.terraeyesdb.dataAccess.DaoConnection;
+import org.terraeyes.terraeyesdb.models.Humidity;
 import org.terraeyes.terraeyesdb.models.Temperature;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
 @Repository
-public class TemperaturDaoImpl extends DaoConnection implements TemperaturDao
+public class HumidityDaoImpl extends DaoConnection implements HumidityDao
 {
-  @Override public List<Temperature> getTemperaturesForUser(String userId)
+  @Override public List<Humidity> getHumidityForUser(String userId)
   {
-    List<Temperature> temperatures = new ArrayList<>();
+    List<Humidity> humidityList = new ArrayList<>();
 
     String QUERY = "SELECT * FROM terraeyes.measurement "
         + "WHERE userId=?";
@@ -28,29 +32,29 @@ public class TemperaturDaoImpl extends DaoConnection implements TemperaturDao
 
       while (resultSet.next())
       {
-        Temperature temperature = new Temperature(
+        Humidity humidity = new Humidity(
             resultSet.getInt("id"),
             resultSet.getString("eui"),
             resultSet.getString("userId"),
-            resultSet.getBigDecimal("temperature")
+            resultSet.getBigDecimal("humidity")
         );
 
-        temperatures.add(temperature);
+        humidityList.add(humidity);
       }
 
-      return temperatures;
+      return humidityList;
     }
     catch (SQLException e)
     {
-      System.out.println("SQL exception for get temperature (userId): " + e.getMessage());
+      System.out.println("SQL exception for get humidity (userId): " + e.getMessage());
     }
 
     return null;
   }
 
-  @Override public List<Temperature> getTemperaturesForEui(String eui)
+  @Override public List<Humidity> getHumidityForEui(String eui)
   {
-    List<Temperature> temperatures = new ArrayList<>();
+    List<Humidity> humidityList = new ArrayList<>();
 
     String QUERY = "SELECT * FROM terraeyes.measurement "
         + "WHERE eui=?";
@@ -65,21 +69,21 @@ public class TemperaturDaoImpl extends DaoConnection implements TemperaturDao
 
       while (resultSet.next())
       {
-        Temperature temperature = new Temperature(
+        Humidity humidity = new Humidity(
             resultSet.getInt("id"),
             resultSet.getString("eui"),
             resultSet.getString("userId"),
-            resultSet.getBigDecimal("temperature")
+            resultSet.getBigDecimal("humidity")
         );
 
-        temperatures.add(temperature);
+        humidityList.add(humidity);
       }
 
-      return temperatures;
+      return humidityList;
     }
     catch (SQLException e)
     {
-      System.out.println("SQL exception for get temperature (eui): " + e.getMessage());
+      System.out.println("SQL exception for get humidity (eui): " + e.getMessage());
     }
 
     return null;
