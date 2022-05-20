@@ -12,13 +12,13 @@ public class TemperatureControllerImpl implements TemperatureController
 {
   @Resource TemperaturDao temperaturDao;
 
-  @GetMapping("/temperature/{userId}")
+  @GetMapping("/temperatures/{userId}")
   @Override public List<Temperature> getTemperaturesForUser(@PathVariable String userId)
   {
     return temperaturDao.getTemperaturesForUser(userId);
   }
 
-  @GetMapping("/temperature/{userId}/{eui}")
+  @GetMapping("/temperatures/{userId}/{eui}")
   @Override public List<Temperature> getTemperaturesForEui(@PathVariable String eui)
   {
     return temperaturDao.getTemperaturesForEui(eui);
