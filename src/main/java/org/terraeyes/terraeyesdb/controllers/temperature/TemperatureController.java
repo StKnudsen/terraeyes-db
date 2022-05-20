@@ -6,7 +6,6 @@ import java.util.List;
 
 public interface TemperatureController
 {
-  //boolean setTemperature(Temperature temperature); // Samles i measurement
-  List<Temperature> getTemperaturesForUser(int userId);
+  List<Temperature> getTemperaturesForUser(String userId);
   List<Temperature> getTemperaturesForEui(String eui);
 }

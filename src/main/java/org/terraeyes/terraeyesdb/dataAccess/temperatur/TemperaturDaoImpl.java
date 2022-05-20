@@ -11,53 +11,77 @@ import java.util.List;
 @Repository
 public class TemperaturDaoImpl extends DaoConnection implements TemperaturDao
 {
-  /*@Override
-  public boolean setTemperature(Temperature temperature)
+  @Override public List<Temperature> getTemperaturesForUser(String userId)
   {
-    String MEASUREMENT_QUERY = "INSERT INTO terraeyes.measurement (eui, userId) VALUES (?, ?)";
-    String TEMPERATURE_QUERY = "INSERT INTO terraeyes.temperature (MeasurementId, temperature) VALUES (?, ?)";
+    List<Temperature> temperatures = new ArrayList<>();
+
+    String QUERY = "SELECT * FROM terraeyes.measurement "
+        + "WHERE userId=?";
 
     try (Connection connection = getConnection())
     {
-      // insert into measurement
-      PreparedStatement statement = connection.prepareStatement(MEASUREMENT_QUERY,
-          Statement.RETURN_GENERATED_KEYS);
-      statement.setString(1, temperature.getEui());
-      statement.setString(2, temperature.getUserId());
-      statement.execute();
+      PreparedStatement statement = connection.prepareStatement(QUERY);
 
-      // get the id from last inserted measurement
-      //statement.executeQuery();
-      ResultSet resultSet = statement.getGeneratedKeys();
-      resultSet.next();
-      int measurementId = resultSet.getInt("id");
+      statement.setString(1, userId);
 
-      // with the measurementId, inset the temperature with that key
-      statement = connection.prepareStatement(TEMPERATURE_QUERY);
-      statement.setInt(1, measurementId);
-      statement.setFloat(2, temperature.getTemperature());
-      statement.execute();
+      ResultSet resultSet = statement.executeQuery();
 
-      return true;
+      while (resultSet.next())
+      {
+        Temperature temperature = new Temperature(
+            resultSet.getInt("id"),
+            resultSet.getString("eui"),
+            resultSet.getString("userId"),
+            resultSet.getBigDecimal("temperature")
+        );
+
+        temperatures.add(temperature);
+      }
+
+      return temperatures;
     }
     catch (SQLException e)
     {
       System.out.println("SQL exception for set temperature: " + e.getMessage());
     }
 
-    return false;
-  } */
-
-  @Override public List<Temperature> getTemperaturesForUser(int userId)
-  {
-    List<Temperature> temperatures = new ArrayList<>();
-
-
     return null;
   }
 
   @Override public List<Temperature> getTemperaturesForEui(String eui)
   {
+    List<Temperature> temperatures = new ArrayList<>();
+
+    String QUERY = "SELECT * FROM terraeyes.measurement "
+        + "WHERE eui=?";
+
+    try (Connection connection = getConnection())
+    {
+      PreparedStatement statement = connection.prepareStatement(QUERY);
+
+      statement.setString(1, eui);
+
+      ResultSet resultSet = statement.executeQuery();
+
+      while (resultSet.next())
+      {
+        Temperature temperature = new Temperature(
+            resultSet.getInt("id"),
+            resultSet.getString("eui"),
+            resultSet.getString("userId"),
+            resultSet.getBigDecimal("temperature")
+        );
+
+        temperatures.add(temperature);
+      }
+
+      return temperatures;
+    }
+    catch (SQLException e)
+    {
+      System.out.println("SQL exception for set temperature: " + e.getMessage());
+    }
+
     return null;
   }
 }

@@ -26,6 +26,13 @@ public abstract class Measurement
     this.userId = userId;
   }
 
+  public Measurement(int id, String eui, String userId)
+  {
+    this.id = id;
+    this.eui = eui;
+    this.userId = userId;
+  }
+
   public int getId()
   {
     return id;

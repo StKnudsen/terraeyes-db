@@ -1,8 +1,6 @@
 package org.terraeyes.terraeyesdb.controllers.temperature;
 
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.terraeyes.terraeyesdb.dataAccess.temperatur.TemperaturDao;
 import org.terraeyes.terraeyesdb.models.Temperature;
 
@@ -14,19 +12,15 @@ public class TemperatureControllerImpl implements TemperatureController
 {
   @Resource TemperaturDao temperaturDao;
 
-  /* @PostMapping("/temperature")
-  @Override public boolean setTemperature(@RequestBody Temperature temperature)
+  @GetMapping("/temperature/{userId}")
+  @Override public List<Temperature> getTemperaturesForUser(@PathVariable String userId)
   {
-    return temperaturDao.setTemperature(temperature);
-  } */
-
-  @Override public List<Temperature> getTemperaturesForUser(int userId)
-  {
-    return null;
+    return temperaturDao.getTemperaturesForUser(userId);
   }
 
-  @Override public List<Temperature> getTemperaturesForEui(String eui)
+  @GetMapping("/temperature/{userId}/{eui}")
+  @Override public List<Temperature> getTemperaturesForEui(@PathVariable String eui)
   {
-    return null;
+    return temperaturDao.getTemperaturesForEui(eui);
   }
 }

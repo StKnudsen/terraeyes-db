@@ -6,7 +6,6 @@ import java.util.List;
 
 public interface TemperaturDao
 {
-  // boolean setTemperature(Temperature temperature);
-  List<Temperature> getTemperaturesForUser(int userId);
+  List<Temperature> getTemperaturesForUser(String userId);
   List<Temperature> getTemperaturesForEui(String eui);
 }
