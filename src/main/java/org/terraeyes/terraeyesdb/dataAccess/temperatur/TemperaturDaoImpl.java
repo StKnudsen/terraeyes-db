@@ -42,7 +42,7 @@ public class TemperaturDaoImpl extends DaoConnection implements TemperaturDao
     }
     catch (SQLException e)
     {
-      System.out.println("SQL exception for set temperature: " + e.getMessage());
+      System.out.println("SQL exception for get temperature (userId): " + e.getMessage());
     }
 
     return null;
@@ -79,7 +79,7 @@ public class TemperaturDaoImpl extends DaoConnection implements TemperaturDao
     }
     catch (SQLException e)
     {
-      System.out.println("SQL exception for set temperature: " + e.getMessage());
+      System.out.println("SQL exception for get temperature (eui): " + e.getMessage());
     }
 
     return null;

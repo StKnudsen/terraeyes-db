@@ -20,8 +20,9 @@ public class HumidityControllerImpl implements HumidityController
     return humidityDao.getHumidityForUser(userId);
   }
 
-  @Override public List<Humidity> getHumidityForEui(String eui)
+  @GetMapping("/humidity/{userId}/{eui}")
+  @Override public List<Humidity> getHumidityForEui(@PathVariable String eui)
   {
-    return null;
+    return humidityDao.getHumidityForEui(eui);
   }
 }

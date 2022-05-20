@@ -46,7 +46,7 @@ public class HumidityDaoImpl extends DaoConnection implements HumidityDao
     }
     catch (SQLException e)
     {
-      System.out.println("SQL exception for set humidity: " + e.getMessage());
+      System.out.println("SQL exception for get humidity (userId): " + e.getMessage());
     }
 
     return null;
@@ -54,6 +54,38 @@ public class HumidityDaoImpl extends DaoConnection implements HumidityDao
 
   @Override public List<Humidity> getHumidityForEui(String eui)
   {
+    List<Humidity> humidityList = new ArrayList<>();
+
+    String QUERY = "SELECT * FROM terraeyes.measurement "
+        + "WHERE eui=?";
+
+    try (Connection connection = getConnection())
+    {
+      PreparedStatement statement = connection.prepareStatement(QUERY);
+
+      statement.setString(1, eui);
+
+      ResultSet resultSet = statement.executeQuery();
+
+      while (resultSet.next())
+      {
+        Humidity humidity = new Humidity(
+            resultSet.getInt("id"),
+            resultSet.getString("eui"),
+            resultSet.getString("userId"),
+            resultSet.getBigDecimal("humidity")
+        );
+
+        humidityList.add(humidity);
+      }
+
+      return humidityList;
+    }
+    catch (SQLException e)
+    {
+      System.out.println("SQL exception for get humidity (eui): " + e.getMessage());
+    }
+
     return null;
   }
 }
