@@ -18,7 +18,8 @@ public class HumidityDaoImpl extends DaoConnection implements HumidityDao
   {
     List<Humidity> humidityList = new ArrayList<>();
 
-    String QUERY = "SELECT * FROM terraeyes.measurement WHERE userId=?";
+    String QUERY = "SELECT id, eui, userId, humidity "
+        + "FROM terraeyes.measurement WHERE userId=?";
 
     try (Connection connection = getConnection())
     {
@@ -54,8 +55,8 @@ public class HumidityDaoImpl extends DaoConnection implements HumidityDao
   {
     List<Humidity> humidityList = new ArrayList<>();
 
-    String QUERY = "SELECT * FROM terraeyes.measurement "
-        + "WHERE eui=?";
+    String QUERY = "SELECT id, eui, userId, humidity "
+        + "FROM terraeyes.measurement WHERE eui=?";
 
     try (Connection connection = getConnection())
     {

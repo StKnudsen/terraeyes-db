@@ -15,8 +15,8 @@ public class TemperaturDaoImpl extends DaoConnection implements TemperaturDao
   {
     List<Temperature> temperatures = new ArrayList<>();
 
-    String QUERY = "SELECT * FROM terraeyes.measurement "
-        + "WHERE userId=?";
+    String QUERY = "SELECT id, eui, userId, temperature "
+        + "FROM terraeyes.measurement WHERE userId=?";
 
     try (Connection connection = getConnection())
     {
@@ -52,8 +52,8 @@ public class TemperaturDaoImpl extends DaoConnection implements TemperaturDao
   {
     List<Temperature> temperatures = new ArrayList<>();
 
-    String QUERY = "SELECT * FROM terraeyes.measurement "
-        + "WHERE eui=?";
+    String QUERY = "SELECT id, eui, userId, temperature "
+        + "FROM terraeyes.measurement WHERE eui=?";
 
     try (Connection connection = getConnection())
     {

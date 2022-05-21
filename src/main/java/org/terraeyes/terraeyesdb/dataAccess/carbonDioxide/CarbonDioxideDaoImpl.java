@@ -18,7 +18,8 @@ public class CarbonDioxideDaoImpl extends DaoConnection implements CarbonDioxide
   {
     List<CarbonDioxide> carbonDioxides = new ArrayList<>();
 
-    String QUERY = "SELECT * FROM terraeyes.measurement WHERE userId=?";
+    String QUERY = "SELECT id, eui, userId, carbondioxide "
+        + "FROM terraeyes.measurement WHERE userId=?";
 
     try (Connection connection = getConnection())
     {
@@ -54,7 +55,8 @@ public class CarbonDioxideDaoImpl extends DaoConnection implements CarbonDioxide
   {
     List<CarbonDioxide> carbonDioxides = new ArrayList<>();
 
-    String QUERY = "SELECT * FROM terraeyes.measurement WHERE eui=?";
+    String QUERY = "SELECT id, eui, userId, carbondioxide "
+        + "FROM terraeyes.measurement WHERE eui=?";
 
     try (Connection connection = getConnection())
     {
