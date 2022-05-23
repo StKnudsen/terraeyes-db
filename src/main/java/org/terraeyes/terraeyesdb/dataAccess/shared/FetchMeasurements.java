@@ -12,7 +12,7 @@ import java.util.List;
 
 public class FetchMeasurements extends DaoConnection
 {
-  public List<SingleMeasurement> ReturnList(String id, String caller, String type)
+  public List<SingleMeasurement> ReturnDecimalList(String id, String caller, String type)
   {
     List<SingleMeasurement> temperatures = new ArrayList<>();
 
@@ -33,7 +33,45 @@ public class FetchMeasurements extends DaoConnection
             resultSet.getInt("id"),
             resultSet.getString("eui"),
             resultSet.getString("userId"),
-            resultSet.getBigDecimal("temperature")
+            resultSet.getBigDecimal(type)
+        );
+
+        temperatures.add(temperature);
+      }
+
+      return temperatures;
+    }
+    catch (SQLException e)
+    {
+      System.out.println("SQL exception for get temperature (" + caller + "): "
+          + e.getMessage());
+    }
+
+    return null;
+  }
+
+  public List<SingleMeasurement> ReturnIntegerList(String id, String caller, String type)
+  {
+    List<SingleMeasurement> temperatures = new ArrayList<>();
+
+    String QUERY = "SELECT id, eui, userId, " + type
+        + " FROM terraeyes.measurement WHERE "+ caller +"=?";
+
+    try (Connection connection = getConnection())
+    {
+      PreparedStatement statement = connection.prepareStatement(QUERY);
+
+      statement.setString(1, id);
+
+      ResultSet resultSet = statement.executeQuery();
+
+      while (resultSet.next())
+      {
+        SingleMeasurement temperature = new SingleMeasurement(
+            resultSet.getInt("id"),
+            resultSet.getString("eui"),
+            resultSet.getString("userId"),
+            resultSet.getInt(type)
         );
 
         temperatures.add(temperature);
