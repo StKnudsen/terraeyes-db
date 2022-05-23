@@ -52,7 +52,7 @@ public class FetchMeasurements extends DaoConnection
 
   public List<SingleMeasurement> ReturnIntegerList(String id, String caller, String type)
   {
-    List<SingleMeasurement> temperatures = new ArrayList<>();
+    List<SingleMeasurement> measurements = new ArrayList<>();
 
     String QUERY = "SELECT id, eui, userId, " + type
         + " FROM terraeyes.measurement WHERE "+ caller +"=?";
@@ -67,21 +67,21 @@ public class FetchMeasurements extends DaoConnection
 
       while (resultSet.next())
       {
-        SingleMeasurement temperature = new SingleMeasurement(
+        SingleMeasurement measurement = new SingleMeasurement(
             resultSet.getInt("id"),
             resultSet.getString("eui"),
             resultSet.getString("userId"),
             resultSet.getInt(type)
         );
 
-        temperatures.add(temperature);
+        measurements.add(measurement);
       }
 
-      return temperatures;
+      return measurements;
     }
     catch (SQLException e)
     {
-      System.out.println("SQL exception for get temperature (" + caller + "): "
+      System.out.println("SQL exception for get " + type + " (" + caller + "): "
           + e.getMessage());
     }
 

@@ -7,24 +7,26 @@ public abstract class Measurement
   private int id;
   private String eui;
   private String userId;
-  //private Timestamp timestamp;
+  private String timestamp;
 
   public Measurement()
   {
   }
 
 
-  public Measurement(String eui, String userId)
+  public Measurement(String eui, String userId, String timestamp)
   {
     this.eui = eui;
     this.userId = userId;
+    this.timestamp = timestamp;
   }
 
-  public Measurement(int id, String eui, String userId)
+  public Measurement(int id, String eui, String userId, String timestamp)
   {
     this.id = id;
     this.eui = eui;
     this.userId = userId;
+    this.timestamp = timestamp;
   }
 
   public int getId()
@@ -42,9 +44,9 @@ public abstract class Measurement
     return userId;
   }
 
-  /*
-  public Timestamp getTimestamp()
+
+  public String getTimestamp()
   {
     return timestamp;
-  } */
+  }
 }
