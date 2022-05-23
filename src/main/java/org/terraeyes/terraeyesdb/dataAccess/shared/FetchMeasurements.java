@@ -33,6 +33,7 @@ public class FetchMeasurements extends DaoConnection
             resultSet.getInt("id"),
             resultSet.getString("eui"),
             resultSet.getString("userId"),
+            resultSet.getString("timestamp"),
             resultSet.getBigDecimal(type)
         );
 
@@ -71,6 +72,7 @@ public class FetchMeasurements extends DaoConnection
             resultSet.getInt("id"),
             resultSet.getString("eui"),
             resultSet.getString("userId"),
+            resultSet.getString("timestamp"),
             resultSet.getInt(type)
         );
 

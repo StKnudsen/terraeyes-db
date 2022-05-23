@@ -14,8 +14,8 @@ public class MeasurementDaoImpl extends DaoConnection implements MeasurementDao
   @Override public boolean setMeasurement(AllMeasurements allMeasurements)
   {
     String QUERY = "INSERT INTO terraeyes.measurement "
-        + "(eui, userId, timestamp, temperature, humidity, carbondioxide)"
-        + "VALUES (?, ?, ?, ?, ?, ?);";
+        + "(eui, userId, timestamp, temperature, humidity, carbondioxide, servomoved, activity)"
+        + "VALUES (?, ?, ?, ?, ?, ?, ?, ?);";
 
     try (Connection connection = getConnection())
     {
@@ -27,6 +27,8 @@ public class MeasurementDaoImpl extends DaoConnection implements MeasurementDao
       statement.setBigDecimal(4, allMeasurements.getTemperature());
       statement.setBigDecimal(5, allMeasurements.getHumidity());
       statement.setInt(6, allMeasurements.getCarbonDioxide());
+      statement.setBoolean(7, allMeasurements.isServoMoved());
+      statement.setBoolean(8, allMeasurements.isActivity());
 
       statement.execute();
 
