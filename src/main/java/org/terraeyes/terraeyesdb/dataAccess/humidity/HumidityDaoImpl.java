@@ -39,7 +39,7 @@ public class HumidityDaoImpl extends DaoConnection implements HumidityDao
             resultSet.getInt("id"),
             resultSet.getString("eui"),
             resultSet.getString("timestamp"),
-            resultSet.getInt("humidity")
+            resultSet.getBigDecimal("humidity")
         );
 
         measurements.add(measurement);
