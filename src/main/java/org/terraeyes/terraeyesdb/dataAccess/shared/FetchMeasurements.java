@@ -1,33 +1,23 @@
-package org.terraeyes.terraeyesdb.dataAccess.temperatur;
+package org.terraeyes.terraeyesdb.dataAccess.shared;
 
-import org.springframework.stereotype.Repository;
-import org.terraeyes.terraeyesdb.dataAccess.shared.FetchMeasurements;
+import org.terraeyes.terraeyesdb.dataAccess.DaoConnection;
 import org.terraeyes.terraeyesdb.models.SingleMeasurement;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
-@Repository
-public class TemperaturDaoImpl implements TemperaturDao
+public class FetchMeasurements extends DaoConnection
 {
-  private FetchMeasurements fetch = new FetchMeasurements();
-
-  @Override public List<SingleMeasurement> getTemperaturesForUser(String userId)
-  {
-    return fetch.ReturnList(userId, "userId", "temperature");
-  }
-
-  @Override public List<SingleMeasurement> getTemperaturesForEui(String eui)
-  {
-    return fetch.ReturnList(eui, "eui", "temperature");
-  }
-
-  /*
-  List<SingleMeasurement> FetchListFor(String id, String caller)
+  public List<SingleMeasurement> ReturnList(String id, String caller, String type)
   {
     List<SingleMeasurement> temperatures = new ArrayList<>();
 
-    String QUERY = "SELECT id, eui, userId, temperature "
-        + "FROM terraeyes.measurement WHERE "+ caller +"=?";
+    String QUERY = "SELECT id, eui, userId, " + type 
+        + " FROM terraeyes.measurement WHERE "+ caller +"=?";
 
     try (Connection connection = getConnection())
     {
@@ -58,5 +48,5 @@ public class TemperaturDaoImpl implements TemperaturDao
     }
 
     return null;
-  } */
+  }
 }

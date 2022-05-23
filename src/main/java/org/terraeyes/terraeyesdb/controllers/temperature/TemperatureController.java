@@ -1,11 +1,11 @@
 package org.terraeyes.terraeyesdb.controllers.temperature;
 
-import org.terraeyes.terraeyesdb.models.Temperature;
+import org.terraeyes.terraeyesdb.models.SingleMeasurement;
 
 import java.util.List;
 
 public interface TemperatureController
 {
-  List<Temperature> getTemperaturesForUser(String userId);
-  List<Temperature> getTemperaturesForEui(String eui);
+  List<SingleMeasurement> getTemperaturesForUser(String userId);
+  List<SingleMeasurement> getTemperaturesForEui(String eui);
 }
