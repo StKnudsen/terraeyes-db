@@ -4,7 +4,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 import org.terraeyes.terraeyesdb.dataAccess.humidity.HumidityDao;
-import org.terraeyes.terraeyesdb.models.Humidity;
+import org.terraeyes.terraeyesdb.models.SingleMeasurement;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -15,13 +15,13 @@ public class HumidityControllerImpl implements HumidityController
   @Resource HumidityDao humidityDao;
 
   @GetMapping("/humidity/{userId}")
-  @Override public List<Humidity> getHumidityForUser(@PathVariable String userId)
+  @Override public List<SingleMeasurement> getHumidityForUser(@PathVariable String userId)
   {
     return humidityDao.getHumidityForUser(userId);
   }
 
   @GetMapping("/humidity/{userId}/{eui}")
-  @Override public List<Humidity> getHumidityForEui(@PathVariable String eui)
+  @Override public List<SingleMeasurement> getHumidityForEui(@PathVariable String eui)
   {
     return humidityDao.getHumidityForEui(eui);
   }
