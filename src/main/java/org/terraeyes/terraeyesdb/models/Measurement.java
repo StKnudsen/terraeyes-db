@@ -13,12 +13,6 @@ public abstract class Measurement
   {
   }
 
-  /*public Measurement(String eui, String userId, Timestamp timestamp)
-  {
-    this.eui = eui;
-    this.userId = userId;
-    this.timestamp = timestamp;
-  }*/
 
   public Measurement(String eui, String userId)
   {
