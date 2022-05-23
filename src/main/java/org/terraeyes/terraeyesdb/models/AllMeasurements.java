@@ -10,9 +10,9 @@ public class AllMeasurements extends Measurement
   private boolean servoMoved;
   private boolean activity;
 
-  public AllMeasurements(String eui, String userId, String timestamp)
+  public AllMeasurements(String eui, String timestamp)
   {
-    super(eui, userId, timestamp);
+    super(eui, timestamp);
   }
 
   public BigDecimal getTemperature()

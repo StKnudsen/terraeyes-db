@@ -12,51 +12,15 @@ import java.util.List;
 
 public class FetchMeasurements extends DaoConnection
 {
-  public List<SingleMeasurement> ReturnDecimalList(String id, String caller, String type)
-  {
-    List<SingleMeasurement> temperatures = new ArrayList<>();
-
-    String QUERY = "SELECT id, eui, userId, " + type 
-        + " FROM terraeyes.measurement WHERE "+ caller +"=?";
-
-    try (Connection connection = getConnection())
-    {
-      PreparedStatement statement = connection.prepareStatement(QUERY);
-
-      statement.setString(1, id);
-
-      ResultSet resultSet = statement.executeQuery();
-
-      while (resultSet.next())
-      {
-        SingleMeasurement temperature = new SingleMeasurement(
-            resultSet.getInt("id"),
-            resultSet.getString("eui"),
-            resultSet.getString("userId"),
-            resultSet.getString("timestamp"),
-            resultSet.getBigDecimal(type)
-        );
-
-        temperatures.add(temperature);
-      }
-
-      return temperatures;
-    }
-    catch (SQLException e)
-    {
-      System.out.println("SQL exception for get temperature (" + caller + "): "
-          + e.getMessage());
-    }
-
-    return null;
-  }
-
-  public List<SingleMeasurement> ReturnIntegerList(String id, String caller, String type)
+  public List<SingleMeasurement> ReturnDecimalList(String id, String column, String type)
   {
     List<SingleMeasurement> measurements = new ArrayList<>();
 
-    String QUERY = "SELECT id, eui, userId, " + type
-        + " FROM terraeyes.measurement WHERE "+ caller +"=?";
+    String QUERY = "SELECT id, m.eui, timestamp, " + type
+        + " FROM terraeyes.measurement m"
+        + " INNER JOIN terraeyes.terrarium t "
+        + " ON m.eui = t.eui "
+        + " WHERE t."+ column +"=?";
 
     try (Connection connection = getConnection())
     {
@@ -71,7 +35,44 @@ public class FetchMeasurements extends DaoConnection
         SingleMeasurement measurement = new SingleMeasurement(
             resultSet.getInt("id"),
             resultSet.getString("eui"),
-            resultSet.getString("userId"),
+            resultSet.getString("timestamp"),
+            resultSet.getBigDecimal(type)
+        );
+
+        measurements.add(measurement);
+      }
+
+      return measurements;
+    }
+    catch (SQLException e)
+    {
+      System.out.println("SQL exception for get " + type + " (" + column + "): "
+          + e.getMessage());
+    }
+
+    return null;
+  }
+
+  public List<SingleMeasurement> ReturnIntegerList(String id, String column, String type)
+  {
+    List<SingleMeasurement> measurements = new ArrayList<>();
+
+    String QUERY = "SELECT id, eui, timestamp, " + type
+        + " FROM terraeyes.measurement WHERE "+ column +"=?";
+
+    try (Connection connection = getConnection())
+    {
+      PreparedStatement statement = connection.prepareStatement(QUERY);
+
+      statement.setString(1, id);
+
+      ResultSet resultSet = statement.executeQuery();
+
+      while (resultSet.next())
+      {
+        SingleMeasurement measurement = new SingleMeasurement(
+            resultSet.getInt("id"),
+            resultSet.getString("eui"),
             resultSet.getString("timestamp"),
             resultSet.getInt(type)
         );
@@ -83,7 +84,7 @@ public class FetchMeasurements extends DaoConnection
     }
     catch (SQLException e)
     {
-      System.out.println("SQL exception for get " + type + " (" + caller + "): "
+      System.out.println("SQL exception for get " + type + " (" + column + "): "
           + e.getMessage());
     }
 

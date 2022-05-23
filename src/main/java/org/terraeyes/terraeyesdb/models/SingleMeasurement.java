@@ -4,9 +4,9 @@ public class SingleMeasurement<T> extends Measurement
 {
   private T measurement;
 
-  public SingleMeasurement(int id, String eui, String userId, String timestamp, T measurement)
+  public SingleMeasurement(int id, String eui, String timestamp, T measurement)
   {
-    super(id, eui, userId, timestamp);
+    super(id, eui, timestamp);
     this.measurement = measurement;
   }
 
