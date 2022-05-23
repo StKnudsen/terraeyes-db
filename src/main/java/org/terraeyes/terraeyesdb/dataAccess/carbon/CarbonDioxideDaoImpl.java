@@ -1,4 +1,4 @@
-package org.terraeyes.terraeyesdb.dataAccess.temperatur;
+package org.terraeyes.terraeyesdb.dataAccess.carbon;
 
 import org.springframework.stereotype.Repository;
 import org.terraeyes.terraeyesdb.dataAccess.DaoConnection;
@@ -12,14 +12,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Repository
-public class TemperaturDaoImpl extends DaoConnection implements TemperaturDao
+public class CarbonDioxideDaoImpl extends DaoConnection implements CarbonDioxideDao
 {
   @Override
-  public List<SingleMeasurement> getTemperaturesForUser(String userId)
+  public List<SingleMeasurement> getCarbonDioxideForUser(String userId)
   {
     List<SingleMeasurement> measurements = new ArrayList<>();
 
-    String QUERY = "SELECT id, m.eui, timestamp, temperature "
+    String QUERY = "SELECT id, m.eui, timestamp, carbondioxide "
         + "FROM terraeyes.measurement m "
         + "INNER JOIN terraeyes.terrarium t "
         + "ON m.eui = t.eui "
@@ -39,7 +39,7 @@ public class TemperaturDaoImpl extends DaoConnection implements TemperaturDao
             resultSet.getInt("id"),
             resultSet.getString("eui"),
             resultSet.getString("timestamp"),
-            resultSet.getBigDecimal("temperature")
+            resultSet.getBigDecimal("carbondioxide")
         );
 
         measurements.add(measurement);
@@ -49,7 +49,7 @@ public class TemperaturDaoImpl extends DaoConnection implements TemperaturDao
     }
     catch (SQLException e)
     {
-      System.out.println("SQL exception for get temperature for userId: "
+      System.out.println("SQL exception for get carbon dioxide for userId: "
           + e.getMessage());
     }
 
@@ -57,11 +57,11 @@ public class TemperaturDaoImpl extends DaoConnection implements TemperaturDao
   }
 
   @Override
-  public List<SingleMeasurement> getTemperaturesForEui(String eui)
+  public List<SingleMeasurement> getCarbonDioxideForEui(String eui)
   {
     List<SingleMeasurement> measurements = new ArrayList<>();
 
-    String QUERY = "SELECT id, eui, timestamp, temperature "
+    String QUERY = "SELECT id, eui, timestamp, carbondioxide "
         + "FROM terraeyes.measurement "
         + "WHERE eui=?";
 
@@ -79,7 +79,7 @@ public class TemperaturDaoImpl extends DaoConnection implements TemperaturDao
             resultSet.getInt("id"),
             resultSet.getString("eui"),
             resultSet.getString("timestamp"),
-            resultSet.getBigDecimal("temperature")
+            resultSet.getBigDecimal("carbondioxide")
         );
 
         measurements.add(measurement);
@@ -89,7 +89,7 @@ public class TemperaturDaoImpl extends DaoConnection implements TemperaturDao
     }
     catch (SQLException e)
     {
-      System.out.println("SQL exception for get temperature for eui: "
+      System.out.println("SQL exception for get carbondioxide for eui: "
           + e.getMessage());
     }
 

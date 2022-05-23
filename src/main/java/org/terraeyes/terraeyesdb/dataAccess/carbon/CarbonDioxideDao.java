@@ -1,4 +1,4 @@
-package org.terraeyes.terraeyesdb.dataAccess.carbonDioxide;
+package org.terraeyes.terraeyesdb.dataAccess.carbon;
 
 import org.terraeyes.terraeyesdb.models.SingleMeasurement;
 
