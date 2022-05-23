@@ -14,14 +14,14 @@ public class ServoControllerImpl implements ServoController
 {
   @Resource ServoDao servoDao;
 
-  @GetMapping("/servoMoved/{userId}")
+  @GetMapping("/servo/{userId}")
   @Override
   public List<SingleMeasurement> getServoForUser(@PathVariable String userId)
   {
     return servoDao.getServoForUser(userId);
   }
 
-  @GetMapping("/servoMoved/{userId}/{eui}")
+  @GetMapping("/servo/{userId}/{eui}")
   @Override
   public List<SingleMeasurement> getServoForEui(@PathVariable String eui)
   {
