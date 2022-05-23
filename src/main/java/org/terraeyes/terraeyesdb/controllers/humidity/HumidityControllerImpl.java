@@ -15,13 +15,15 @@ public class HumidityControllerImpl implements HumidityController
   @Resource HumidityDao humidityDao;
 
   @GetMapping("/humidity/{userId}")
-  @Override public List<SingleMeasurement> getHumidityForUser(@PathVariable String userId)
+  @Override
+  public List<SingleMeasurement> getHumidityForUser(@PathVariable String userId)
   {
     return humidityDao.getHumidityForUser(userId);
   }
 
   @GetMapping("/humidity/{userId}/{eui}")
-  @Override public List<SingleMeasurement> getHumidityForEui(@PathVariable String eui)
+  @Override
+  public List<SingleMeasurement> getHumidityForEui(@PathVariable String eui)
   {
     return humidityDao.getHumidityForEui(eui);
   }

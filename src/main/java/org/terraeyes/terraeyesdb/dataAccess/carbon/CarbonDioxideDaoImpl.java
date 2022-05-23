@@ -1,5 +1,6 @@
-package org.terraeyes.terraeyesdb.dataAccess.shared;
+package org.terraeyes.terraeyesdb.dataAccess.carbon;
 
+import org.springframework.stereotype.Repository;
 import org.terraeyes.terraeyesdb.dataAccess.DaoConnection;
 import org.terraeyes.terraeyesdb.models.SingleMeasurement;
 
@@ -10,23 +11,25 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FetchMeasurements extends DaoConnection
+@Repository
+public class CarbonDioxideDaoImpl extends DaoConnection implements CarbonDioxideDao
 {
-  public List<SingleMeasurement> ReturnDecimalList(String id, String column, String type)
+  @Override
+  public List<SingleMeasurement> getCarbonDioxideForUser(String userId)
   {
     List<SingleMeasurement> measurements = new ArrayList<>();
 
-    String QUERY = "SELECT id, m.eui, timestamp, " + type
-        + " FROM terraeyes.measurement m"
-        + " INNER JOIN terraeyes.terrarium t "
-        + " ON m.eui = t.eui "
-        + " WHERE t."+ column +"=?";
+    String QUERY = "SELECT id, m.eui, timestamp, carbondioxide "
+        + "FROM terraeyes.measurement m "
+        + "INNER JOIN terraeyes.terrarium t "
+        + "ON m.eui = t.eui "
+        + "WHERE t.userId=?";
 
     try (Connection connection = getConnection())
     {
       PreparedStatement statement = connection.prepareStatement(QUERY);
 
-      statement.setString(1, id);
+      statement.setString(1, userId);
 
       ResultSet resultSet = statement.executeQuery();
 
@@ -36,7 +39,7 @@ public class FetchMeasurements extends DaoConnection
             resultSet.getInt("id"),
             resultSet.getString("eui"),
             resultSet.getString("timestamp"),
-            resultSet.getBigDecimal(type)
+            resultSet.getBigDecimal("carbondioxide")
         );
 
         measurements.add(measurement);
@@ -46,25 +49,27 @@ public class FetchMeasurements extends DaoConnection
     }
     catch (SQLException e)
     {
-      System.out.println("SQL exception for get " + type + " (" + column + "): "
+      System.out.println("SQL exception for get carbon dioxide for userId: "
           + e.getMessage());
     }
 
     return null;
   }
 
-  public List<SingleMeasurement> ReturnIntegerList(String id, String column, String type)
+  @Override
+  public List<SingleMeasurement> getCarbonDioxideForEui(String eui)
   {
     List<SingleMeasurement> measurements = new ArrayList<>();
 
-    String QUERY = "SELECT id, eui, timestamp, " + type
-        + " FROM terraeyes.measurement WHERE "+ column +"=?";
+    String QUERY = "SELECT id, eui, timestamp, carbondioxide "
+        + "FROM terraeyes.measurement "
+        + "WHERE eui=?";
 
     try (Connection connection = getConnection())
     {
       PreparedStatement statement = connection.prepareStatement(QUERY);
 
-      statement.setString(1, id);
+      statement.setString(1, eui);
 
       ResultSet resultSet = statement.executeQuery();
 
@@ -74,7 +79,7 @@ public class FetchMeasurements extends DaoConnection
             resultSet.getInt("id"),
             resultSet.getString("eui"),
             resultSet.getString("timestamp"),
-            resultSet.getInt(type)
+            resultSet.getBigDecimal("carbondioxide")
         );
 
         measurements.add(measurement);
@@ -84,7 +89,7 @@ public class FetchMeasurements extends DaoConnection
     }
     catch (SQLException e)
     {
-      System.out.println("SQL exception for get " + type + " (" + column + "): "
+      System.out.println("SQL exception for get carbondioxide for eui: "
           + e.getMessage());
     }
 

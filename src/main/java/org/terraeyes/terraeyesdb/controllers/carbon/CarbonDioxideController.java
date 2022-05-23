@@ -1,4 +1,4 @@
-package org.terraeyes.terraeyesdb.controllers.carbonDioxide;
+package org.terraeyes.terraeyesdb.controllers.carbon;
 
 import org.terraeyes.terraeyesdb.models.SingleMeasurement;
 
