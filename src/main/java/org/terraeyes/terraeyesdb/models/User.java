@@ -2,7 +2,11 @@ package org.terraeyes.terraeyesdb.models;
 
 public class User
 {
-  private final String id;
+  private String id;
+
+  public User()
+  {
+  }
 
   public User(String id)
   {
