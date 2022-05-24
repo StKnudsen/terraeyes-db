@@ -29,7 +29,7 @@ public class MeasurementDaoImpl extends DaoConnection implements MeasurementDao
       statement.setBigDecimal(4, allMeasurements.getHumidity());
       statement.setInt(5, allMeasurements.getCarbonDioxide());
       statement.setBoolean(6, allMeasurements.isServoMoved());
-      statement.setBoolean(7, allMeasurements.isActivity());
+      statement.setInt(7, allMeasurements.getActivity());
 
       statement.execute();
 

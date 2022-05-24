@@ -9,7 +9,7 @@ public class AllMeasurements extends Measurement
   private BigDecimal humidity;
   private int carbonDioxide;
   private boolean servoMoved;
-  private boolean activity;
+  private int activity;
 
   public AllMeasurements(String eui, Timestamp timestamp)
   {
@@ -56,12 +56,12 @@ public class AllMeasurements extends Measurement
     this.servoMoved = servoMoved;
   }
 
-  public boolean isActivity()
+  public int getActivity()
   {
     return activity;
   }
 
-  public void setActivity(boolean activity)
+  public void setActivity(int activity)
   {
     this.activity = activity;
   }

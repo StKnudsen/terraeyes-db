@@ -39,7 +39,7 @@ public class ActivityDaoImpl extends DaoConnection implements ActivityDao
             resultSet.getInt("id"),
             resultSet.getString("eui"),
             resultSet.getTimestamp("timestamp"),
-            resultSet.getBoolean("activity")
+            resultSet.getInt("activity")
         );
 
         measurements.add(measurement);
@@ -79,7 +79,7 @@ public class ActivityDaoImpl extends DaoConnection implements ActivityDao
             resultSet.getInt("id"),
             resultSet.getString("eui"),
             resultSet.getTimestamp("timestamp"),
-            resultSet.getBoolean("activity")
+            resultSet.getInt("activity")
         );
 
         measurements.add(measurement);
