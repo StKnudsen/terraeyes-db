@@ -37,7 +37,7 @@ public class MeasurementDaoImpl extends DaoConnection implements MeasurementDao
     }
     catch (SQLException e)
     {
-      System.out.println("SQL exception for set temperature: " + e.getMessage());
+      System.out.println("SQL exception for setting measurement: " + e.getMessage());
     }
     return false;
   }
