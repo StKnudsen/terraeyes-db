@@ -38,7 +38,7 @@ public class TemperaturDaoImpl extends DaoConnection implements TemperaturDao
         SingleMeasurement measurement = new SingleMeasurement(
             resultSet.getInt("id"),
             resultSet.getString("eui"),
-            resultSet.getString("timestamp"),
+            resultSet.getTimestamp("timestamp"),
             resultSet.getBigDecimal("temperature")
         );
 
@@ -78,7 +78,7 @@ public class TemperaturDaoImpl extends DaoConnection implements TemperaturDao
         SingleMeasurement measurement = new SingleMeasurement(
             resultSet.getInt("id"),
             resultSet.getString("eui"),
-            resultSet.getString("timestamp"),
+            resultSet.getTimestamp("timestamp"),
             resultSet.getBigDecimal("temperature")
         );
 

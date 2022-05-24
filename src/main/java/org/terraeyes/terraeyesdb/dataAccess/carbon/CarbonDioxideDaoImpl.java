@@ -38,7 +38,7 @@ public class CarbonDioxideDaoImpl extends DaoConnection implements CarbonDioxide
         SingleMeasurement measurement = new SingleMeasurement(
             resultSet.getInt("id"),
             resultSet.getString("eui"),
-            resultSet.getString("timestamp"),
+            resultSet.getTimestamp("timestamp"),
             resultSet.getBigDecimal("carbondioxide")
         );
 
@@ -78,7 +78,7 @@ public class CarbonDioxideDaoImpl extends DaoConnection implements CarbonDioxide
         SingleMeasurement measurement = new SingleMeasurement(
             resultSet.getInt("id"),
             resultSet.getString("eui"),
-            resultSet.getString("timestamp"),
+            resultSet.getTimestamp("timestamp"),
             resultSet.getBigDecimal("carbondioxide")
         );
 

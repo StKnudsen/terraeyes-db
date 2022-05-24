@@ -38,7 +38,7 @@ public class ActivityDaoImpl extends DaoConnection implements ActivityDao
         SingleMeasurement measurement = new SingleMeasurement(
             resultSet.getInt("id"),
             resultSet.getString("eui"),
-            resultSet.getString("timestamp"),
+            resultSet.getTimestamp("timestamp"),
             resultSet.getBoolean("activity")
         );
 
@@ -78,7 +78,7 @@ public class ActivityDaoImpl extends DaoConnection implements ActivityDao
         SingleMeasurement measurement = new SingleMeasurement(
             resultSet.getInt("id"),
             resultSet.getString("eui"),
-            resultSet.getString("timestamp"),
+            resultSet.getTimestamp("timestamp"),
             resultSet.getBoolean("activity")
         );
 

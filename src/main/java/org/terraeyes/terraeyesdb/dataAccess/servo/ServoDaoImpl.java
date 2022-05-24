@@ -38,7 +38,7 @@ public class ServoDaoImpl extends DaoConnection implements ServoDao
         SingleMeasurement measurement = new SingleMeasurement(
             resultSet.getInt("id"),
             resultSet.getString("eui"),
-            resultSet.getString("timestamp"),
+            resultSet.getTimestamp("timestamp"),
             resultSet.getBoolean("servoMoved")
         );
 
@@ -78,7 +78,7 @@ public class ServoDaoImpl extends DaoConnection implements ServoDao
         SingleMeasurement measurement = new SingleMeasurement(
             resultSet.getInt("id"),
             resultSet.getString("eui"),
-            resultSet.getString("timestamp"),
+            resultSet.getTimestamp("timestamp"),
             resultSet.getBoolean("servoMoved")
         );
 

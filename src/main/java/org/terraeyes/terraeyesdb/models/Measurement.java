@@ -1,22 +1,24 @@
 package org.terraeyes.terraeyesdb.models;
 
+import java.sql.Timestamp;
+
 public abstract class Measurement
 {
   private int id;
   private String eui;
-  private String timestamp;
+  private Timestamp timestamp;
 
   public Measurement()
   {
   }
 
-  public Measurement(String eui, String timestamp)
+  public Measurement(String eui, Timestamp timestamp)
   {
     this.eui = eui;
     this.timestamp = timestamp;
   }
 
-  public Measurement(int id, String eui, String timestamp)
+  public Measurement(int id, String eui, Timestamp timestamp)
   {
     this.id = id;
     this.eui = eui;
@@ -33,7 +35,7 @@ public abstract class Measurement
     return eui;
   }
 
-  public String getTimestamp()
+  public Timestamp getTimestamp()
   {
     return timestamp;
   }
