@@ -1,10 +1,10 @@
-package org.terraeyes.terraeyesdb.dataAccess.terrarium;
+package org.terraeyes.terraeyesdb.controllers.terrarium;
 
 import org.terraeyes.terraeyesdb.models.Terrarium;
 
 import java.util.List;
 
-public interface TerrariumDao
+public interface TerrariumController
 {
   boolean setTerrarium(Terrarium terrarium);
   List<Terrarium> getUserTerrariums(String userId);

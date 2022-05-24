@@ -8,6 +8,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 @Repository
 public class TerrariumDaoImpl extends DaoConnection implements TerrariumDao
@@ -45,10 +47,51 @@ public class TerrariumDaoImpl extends DaoConnection implements TerrariumDao
   }
 
   @Override
+  public List<Terrarium> getUserTerrariums(String userId)
+  {
+    List<Terrarium> terrariums = new ArrayList<>();
+
+    String QUERY = "SELECT * "
+        + "FROM terraeyes.terrarium "
+        + "WHERE userId=?";
+
+    try (Connection connection = getConnection())
+    {
+      PreparedStatement statement = connection.prepareStatement(QUERY);
+
+      statement.setString(1, userId);
+
+      ResultSet resultSet = statement.executeQuery();
+
+      while (resultSet.next())
+      {
+        Terrarium terrarium = new Terrarium(
+            resultSet.getString("eui"),
+            resultSet.getString("userId"),
+            resultSet.getBigDecimal("mintemperature"),
+            resultSet.getBigDecimal("maxtemperature"),
+            resultSet.getBigDecimal("minhumidity"),
+            resultSet.getBigDecimal("maxhumidity"),
+            resultSet.getInt("maxcarbondioxide")
+        );
+
+        terrariums.add(terrarium);
+      }
+
+      return terrariums;
+    }
+    catch (SQLException e)
+    {
+      System.out.println("SQL exception for getting terrarium: " + e.getMessage());
+    }
+
+    return null;
+  }
+
+  @Override
   public Terrarium getTerrarium(String eui)
   {
-    String QUERY = "SELECT (eui, userId, mintemperature, maxtemperature, "
-        + "minhumidity, maxhumidity, maxcarbondioxide) "
+    String QUERY = "SELECT * "
         + "FROM terraeyes.terrarium "
         + "WHERE eui=?";
 
@@ -81,9 +124,10 @@ public class TerrariumDaoImpl extends DaoConnection implements TerrariumDao
   }
 
   @Override
-  public boolean updateTerrarium(Terrarium terrarium)
+  public boolean updateTerrarium(Terrarium terrarium, String eui)
   {
     String QUERY = "UPDATE terraeyes.terrarium SET "
+        + "eui = ?, "
         + "userid = ?, "
         + "mintemperature = ?, "
         + "maxtemperature = ?, "
@@ -96,13 +140,14 @@ public class TerrariumDaoImpl extends DaoConnection implements TerrariumDao
     {
       PreparedStatement statement = connection.prepareStatement(QUERY);
 
+      statement.setString(1, terrarium.getEui());
       statement.setString(2, terrarium.getUserId());
       statement.setBigDecimal(3, terrarium.getMinTemperature());
       statement.setBigDecimal(4, terrarium.getMaxTemperature());
       statement.setBigDecimal(5, terrarium.getMinHumidity());
       statement.setBigDecimal(6, terrarium.getMaxHumidity());
       statement.setInt(7, terrarium.getMaxCarbonDioxide());
-      statement.setString(1, terrarium.getEui());
+      statement.setString(8, eui);
 
       statement.execute();
 
