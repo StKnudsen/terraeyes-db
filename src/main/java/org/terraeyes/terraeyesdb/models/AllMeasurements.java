@@ -1,6 +1,7 @@
 package org.terraeyes.terraeyesdb.models;
 
 import java.math.BigDecimal;
+import java.sql.Timestamp;
 
 public class AllMeasurements extends Measurement
 {
@@ -10,7 +11,7 @@ public class AllMeasurements extends Measurement
   private boolean servoMoved;
   private boolean activity;
 
-  public AllMeasurements(String eui, String timestamp)
+  public AllMeasurements(String eui, Timestamp timestamp)
   {
     super(eui, timestamp);
   }

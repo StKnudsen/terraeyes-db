@@ -38,7 +38,7 @@ public class HumidityDaoImpl extends DaoConnection implements HumidityDao
         SingleMeasurement measurement = new SingleMeasurement(
             resultSet.getInt("id"),
             resultSet.getString("eui"),
-            resultSet.getString("timestamp"),
+            resultSet.getTimestamp("timestamp"),
             resultSet.getBigDecimal("humidity")
         );
 
@@ -78,7 +78,7 @@ public class HumidityDaoImpl extends DaoConnection implements HumidityDao
         SingleMeasurement measurement = new SingleMeasurement(
             resultSet.getInt("id"),
             resultSet.getString("eui"),
-            resultSet.getString("timestamp"),
+            resultSet.getTimestamp("timestamp"),
             resultSet.getBigDecimal("humidity")
         );
 

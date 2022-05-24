@@ -24,7 +24,7 @@ public class MeasurementDaoImpl extends DaoConnection implements MeasurementDao
       PreparedStatement statement = connection.prepareStatement(QUERY);
 
       statement.setString(1, allMeasurements.getEui());
-      statement.setString(2, allMeasurements.getTimestamp());
+      statement.setTimestamp(2, allMeasurements.getTimestamp());
       statement.setBigDecimal(3, allMeasurements.getTemperature());
       statement.setBigDecimal(4, allMeasurements.getHumidity());
       statement.setInt(5, allMeasurements.getCarbonDioxide());
