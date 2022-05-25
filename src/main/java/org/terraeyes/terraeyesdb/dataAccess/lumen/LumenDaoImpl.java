@@ -45,6 +45,8 @@ public class LumenDaoImpl extends DaoConnection implements LumenDao
 
         measurements.add(measurement);
       }
+
+      return measurements;
     }
     catch (SQLException e)
     {
@@ -79,7 +81,11 @@ public class LumenDaoImpl extends DaoConnection implements LumenDao
             resultSet.getTimestamp("timestamp"),
             resultSet.getInt("lumen")
         );
+
+        measurements.add(measurement);
       }
+
+      return measurements;
     }
     catch (SQLException e)
     {
