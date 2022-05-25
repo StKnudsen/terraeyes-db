@@ -4,9 +4,6 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 
-### db settings ###
-!./src/main/org.terraeyes.terraeyesdb/util/db.java
-
 ### STS ###
 .apt_generated
 .classpath
