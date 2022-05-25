@@ -10,6 +10,7 @@ public class AllMeasurements extends Measurement
   private int carbonDioxide;
   private boolean servoMoved;
   private int activity;
+  private int lumen;
 
   public AllMeasurements(String eui, Timestamp timestamp)
   {
@@ -64,5 +65,15 @@ public class AllMeasurements extends Measurement
   public void setActivity(int activity)
   {
     this.activity = activity;
+  }
+
+  public int getLumen()
+  {
+    return lumen;
+  }
+
+  public void setLumen(int lumen)
+  {
+    this.lumen = lumen;
   }
 }
