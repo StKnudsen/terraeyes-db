@@ -22,9 +22,6 @@ jobs:
           java-version: '11'
 
       - name: Build with Maven
-        env:
-          ENV_USER: ${{ secrets.ENV_USER }}
-          ENV_PASSWORD: ${{ secrets.ENV_PASSWORD }}
         run: mvn clean install
 
       - name: Upload artifact for deployment job
