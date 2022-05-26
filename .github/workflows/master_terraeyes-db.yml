@@ -23,8 +23,8 @@ jobs:
 
       - name: Build with Maven
         env:
-          ENV_USER: ${{ secret.ENV_USER }}
-          ENV_PASSWORD: ${{ secret.ENV_PASSWORD }}
+          ENV_USER: ${{ secrets.ENV_USER }}
+          ENV_PASSWORD: ${{ secrets.ENV_PASSWORD }}
         run: mvn clean install
 
       - name: Upload artifact for deployment job
