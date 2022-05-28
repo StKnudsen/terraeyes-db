@@ -15,7 +15,7 @@ public class UserDaoImpl extends DaoConnection implements UserDao
   @Override
   public boolean setUser(User user)
   {
-    String QUERY = "INSERT INTO terraeyes.\"User\" "
+    String QUERY = "INSERT INTO terraeyes.\"user\" "
         + "(id) "
         + "VALUES (?)";
 
@@ -40,7 +40,7 @@ public class UserDaoImpl extends DaoConnection implements UserDao
   @Override
   public User getUser(String userId)
   {
-    String QUERY = "SELECT id FROM terraeyes.\"User\" WHERE id=?";
+    String QUERY = "SELECT id FROM terraeyes.\"user\" WHERE id=?";
 
     try (Connection connection = getConnection())
     {
