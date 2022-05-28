@@ -8,6 +8,7 @@ public interface AnimalController
 {
   List<Animal> getTerrariumAnimals(String eui);
   List<Animal> getUsersAnimals(String userId);
+  Animal getAnimal(int id);
   boolean setAnimal(Animal animal);
   boolean updateAnimal(Animal animal, int id);
 }

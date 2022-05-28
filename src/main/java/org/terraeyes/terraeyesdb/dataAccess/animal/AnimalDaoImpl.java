@@ -104,6 +104,42 @@ public class AnimalDaoImpl extends DaoConnection implements AnimalDao
   }
 
   @Override
+  public Animal getAnimal(int id)
+  {
+    String QUERY = "SELECT * FROM terraeyes.animal WHERE id=?";
+
+    try (Connection connection = getConnection())
+    {
+      PreparedStatement statement = connection.prepareStatement(QUERY);
+
+      statement.setInt(1, id);
+
+      ResultSet resultSet = statement.executeQuery();
+
+      resultSet.next();
+
+      return new Animal(
+          resultSet.getInt("id"),
+          resultSet.getString("eui"),
+          resultSet.getString("name"),
+          resultSet.getInt("age"),
+          resultSet.getString("species"),
+          resultSet.getString("sex").charAt(0),
+          resultSet.getBoolean("isshedding"),
+          resultSet.getBoolean("ishibernating"),
+          resultSet.getBoolean("hasoffspring")
+      );
+    }
+    catch (SQLException e)
+    {
+      System.out.println("SQL exception for get animal by id: "
+          + e.getMessage());
+    }
+
+    return null;
+  }
+
+  @Override
   public boolean setAnimal(Animal animal)
   {
     String QUERY = "INSERT INTO terraeyes.animal "

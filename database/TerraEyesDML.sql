@@ -1,6 +1,6 @@
 SET SCHEMA 'terraeyes';
 
-INSERT INTO "User" (id)
+INSERT INTO "user" (id)
 	VALUES ('jack'), ('black');
 
 INSERT INTO Terrarium (eui, userid, mintemperature, maxtemperature, minhumidity, maxhumidity, maxcarbondioxide)
@@ -21,7 +21,7 @@ FROM measurement;
 
 -- FRA MOCKAROO
 -- USERS
-INSERT INTO "User" (id)
+INSERT INTO "user" (id)
 	VALUES ('QC4v3jolrX'),
 	('LpOAaA3hFq'),
 	('cY1XoKyg7d'),
@@ -35,307 +35,159 @@ INSERT INTO "User" (id)
 
 -- TERRARIUM
 INSERT INTO Terrarium (eui, userid, mintemperature, maxtemperature, minhumidity, maxhumidity, maxcarbondioxide)
-	VALUES ('BaAo-31', 'HPjp69334J', 16.8, 22.6, 42.8, 72.9, 20203);
-INSERT INTO Terrarium (eui, userid, mintemperature, maxtemperature, minhumidity, maxhumidity, maxcarbondioxide)
-	VALUES ('XwWI-98', 'h9U7jgpP7O', 15.4, 19.9, 59.4, 89.4, 38307);
-INSERT INTO Terrarium (eui, userid, mintemperature, maxtemperature, minhumidity, maxhumidity, maxcarbondioxide)
-	VALUES ('SkY5-39', 'QC4v3jolrX', 9.9, 35.6, 57.9, 88.3, 38696);
-INSERT INTO Terrarium (eui, userid, mintemperature, maxtemperature, minhumidity, maxhumidity, maxcarbondioxide)
-	VALUES ('HeMh-40', 'ABz0sjHysK', NULL, NULL, NULL, NULL, 14240);
-INSERT INTO Terrarium (eui, userid, mintemperature, maxtemperature, minhumidity, maxhumidity, maxcarbondioxide)
-	VALUES ('UFVD-98', 'HPjp69334J', 15.2, 48.2, 42.6, 73.8, 45426);
-INSERT INTO Terrarium (eui, userid, mintemperature, maxtemperature, minhumidity, maxhumidity, maxcarbondioxide)
-	VALUES ('NWuH-01', 'ABz0sjHysK', 14.2, 49.1, 45.4, 86.1, 48890);
-INSERT INTO Terrarium (eui, userid, mintemperature, maxtemperature, minhumidity, maxhumidity, maxcarbondioxide)
-	VALUES ('R1UT-99', 'QC4v3jolrX', 6.8, 36.6, 57.2, 78.0, 42116);
-INSERT INTO Terrarium (eui, userid, mintemperature, maxtemperature, minhumidity, maxhumidity, maxcarbondioxide)
-	VALUES ('OV81-11', 'ABz0sjHysK', 11.2, 18.1, 59.0, 84.2, 23925);
-INSERT INTO Terrarium (eui, userid, mintemperature, maxtemperature, minhumidity, maxhumidity, maxcarbondioxide)
-	VALUES ('UXm7-84', 'LpOAaA3hFq', 13.5, 34.1, 44.7, 81.0, 16267);
-INSERT INTO Terrarium (eui, userid, mintemperature, maxtemperature, minhumidity, maxhumidity, maxcarbondioxide)
-	VALUES ('LF1N-91', 'h9U7jgpP7O', 12.9, 48.1, 40.9, 79.4, NULL);
-INSERT INTO Terrarium (eui, userid, mintemperature, maxtemperature, minhumidity, maxhumidity, maxcarbondioxide)
-	VALUES ('LvG7-17', 'LpOAaA3hFq', 15.2, 42.9, 49.0, 78.2, 2576);
-INSERT INTO Terrarium (eui, userid, mintemperature, maxtemperature, minhumidity, maxhumidity, maxcarbondioxide)
-	VALUES ('EbYi-66', 'NCT8Alkwhi', 10.9, 35.6, 42.8, 87.6, 21499);
-INSERT INTO Terrarium (eui, userid, mintemperature, maxtemperature, minhumidity, maxhumidity, maxcarbondioxide)
-	VALUES ('BKLj-35', 'ABz0sjHysK', 7.7, 24.6, 49.4, 86.0, 30518);
-INSERT INTO Terrarium (eui, userid, mintemperature, maxtemperature, minhumidity, maxhumidity, maxcarbondioxide)
-	VALUES ('LrtC-56', 'h9U7jgpP7O', 10.7, 31.2, 49.2, 79.9, 27746);
-INSERT INTO Terrarium (eui, userid, mintemperature, maxtemperature, minhumidity, maxhumidity, maxcarbondioxide)
-	VALUES ('PKwI-89', 'NCT8Alkwhi', 11.1, 44.6, 52.9, 71.0, 16796);
-INSERT INTO Terrarium (eui, userid, mintemperature, maxtemperature, minhumidity, maxhumidity, maxcarbondioxide)
-	VALUES ('WCW2-24', 'ABz0sjHysK', 18.6, 11.9, 54.4, 87.4, NULL);
-INSERT INTO Terrarium (eui, userid, mintemperature, maxtemperature, minhumidity, maxhumidity, maxcarbondioxide)
-	VALUES ('Yep9-86', 'ABz0sjHysK', 15.1, 20.2, 58.2, 70.1, 12052);
-INSERT INTO Terrarium (eui, userid, mintemperature, maxtemperature, minhumidity, maxhumidity, maxcarbondioxide)
-	VALUES ('ZLM2-14', 'dnByXE3tEb', 20.0, 47.1, 53.1, 87.6, 26709);
-INSERT INTO Terrarium (eui, userid, mintemperature, maxtemperature, minhumidity, maxhumidity, maxcarbondioxide)
-	VALUES ('OxAg-70', 'LpOAaA3hFq', 7.2, 18.3, 56.7, 86.4, 16849);
-INSERT INTO Terrarium (eui, userid, mintemperature, maxtemperature, minhumidity, maxhumidity, maxcarbondioxide)
-	VALUES ('Awfj-46', 'NCT8Alkwhi', 11.1, 17.3, 56.8, 87.7, 12134);
-INSERT INTO Terrarium (eui, userid, mintemperature, maxtemperature, minhumidity, maxhumidity, maxcarbondioxide)
-	VALUES ('GEwu-61', 'ABz0sjHysK', 15.4, 20.1, 48.3, 80.4, 40733);
-INSERT INTO Terrarium (eui, userid, mintemperature, maxtemperature, minhumidity, maxhumidity, maxcarbondioxide)
-	VALUES ('BV6x-27', 'ABz0sjHysK', 9.1, 19.5, 47.1, 83.1, 36655);
-INSERT INTO Terrarium (eui, userid, mintemperature, maxtemperature, minhumidity, maxhumidity, maxcarbondioxide)
-	VALUES ('Y4va-33', 'h9U7jgpP7O', 15, 16, 55.5, 87.7, 26516);
-INSERT INTO Terrarium (eui, userid, mintemperature, maxtemperature, minhumidity, maxhumidity, maxcarbondioxide)
-	VALUES ('BkKq-77', 'h9U7jgpP7O', 19.6, 34.2, 49.9, 79.2, 20465);
-INSERT INTO Terrarium (eui, userid, mintemperature, maxtemperature, minhumidity, maxhumidity, maxcarbondioxide)
-	VALUES ('DCi5-75', 'ABz0sjHysK', 11.0, 29.6, 46.3, 83.6, 29437);
-INSERT INTO Terrarium (eui, userid, mintemperature, maxtemperature, minhumidity, maxhumidity, maxcarbondioxide)
-	VALUES ('K3m0-75', 'QC4v3jolrX', 14.7, 23.1, 43.6, 88.0, 34768);
-INSERT INTO Terrarium (eui, userid, mintemperature, maxtemperature, minhumidity, maxhumidity, maxcarbondioxide)
-	VALUES ('FJhn-98', 'QC4v3jolrX', 17.1, 30.2, 42.7, 87.2, 19462);
-INSERT INTO Terrarium (eui, userid, mintemperature, maxtemperature, minhumidity, maxhumidity, maxcarbondioxide)
-	VALUES ('WuFm-44', 'x5wdNhBkzG', 7.2, 29.6, 58.0, 76.1, 3435);
-INSERT INTO Terrarium (eui, userid, mintemperature, maxtemperature, minhumidity, maxhumidity, maxcarbondioxide)
-	VALUES ('YuEv-26', 'ABz0sjHysK', 9.4, 24.5, 49.2, 88.6, 1724);
-INSERT INTO Terrarium (eui, userid, mintemperature, maxtemperature, minhumidity, maxhumidity, maxcarbondioxide)
-	VALUES ('Zxak-04', 'ABz0sjHysK', 9.1, 12.5, 44.6, 70.3, NULL);
-INSERT INTO Terrarium (eui, userid, mintemperature, maxtemperature, minhumidity, maxhumidity, maxcarbondioxide)
-	VALUES ('D6cx-39', 'NCT8Alkwhi', 14.4, 16.4, 59.6, 71.7, NULL);
-INSERT INTO Terrarium (eui, userid, mintemperature, maxtemperature, minhumidity, maxhumidity, maxcarbondioxide)
-	VALUES ('D9ff-34', 'h9U7jgpP7O', 5.8, 46.4, 47.4, 74.5, 20998);
-INSERT INTO Terrarium (eui, userid, mintemperature, maxtemperature, minhumidity, maxhumidity, maxcarbondioxide)
-	VALUES ('Wibg-64', 'dnByXE3tEb', NULL, NULL, NULL, NULL, 797);
-INSERT INTO Terrarium (eui, userid, mintemperature, maxtemperature, minhumidity, maxhumidity, maxcarbondioxide)
-	VALUES ('UpdK-96', 'dnByXE3tEb', 11.2, 19.2, 41.7, 83.7, 33031);
-INSERT INTO Terrarium (eui, userid, mintemperature, maxtemperature, minhumidity, maxhumidity, maxcarbondioxide)
-	VALUES ('I6wT-07', 'NCT8Alkwhi', 12.0, 16.9, 57.7, 81.0, 17793);
-INSERT INTO Terrarium (eui, userid, mintemperature, maxtemperature, minhumidity, maxhumidity, maxcarbondioxide)
-	VALUES ('CJ8z-80', 'x5wdNhBkzG', 18.8, 28.6, 57.3, 76.7, 20390);
-INSERT INTO Terrarium (eui, userid, mintemperature, maxtemperature, minhumidity, maxhumidity, maxcarbondioxide)
-	VALUES ('VdKr-11', 'QC4v3jolrX', 16.7, 20.8, 49.5, 76.3, 31949);
-INSERT INTO Terrarium (eui, userid, mintemperature, maxtemperature, minhumidity, maxhumidity, maxcarbondioxide)
-	VALUES ('YDFW-91', 'LpOAaA3hFq', 8.8, 28.0, 57.0, 73.5, 46083);
-INSERT INTO Terrarium (eui, userid, mintemperature, maxtemperature, minhumidity, maxhumidity, maxcarbondioxide)
-	VALUES ('X7GN-85', 'LpOAaA3hFq', 19.5, 42.7, 53.5, 83.3, 30305);
-INSERT INTO Terrarium (eui, userid, mintemperature, maxtemperature, minhumidity, maxhumidity, maxcarbondioxide)
-	VALUES ('Vimn-58', 'LpOAaA3hFq', 16, 17, 42.6, 85.0, 24316);
-INSERT INTO Terrarium (eui, userid, mintemperature, maxtemperature, minhumidity, maxhumidity, maxcarbondioxide)
-	VALUES ('JaaX-51', 'cY1XoKyg7d', 15.7, 24.9, 43.9, 82.8, 48442);
-INSERT INTO Terrarium (eui, userid, mintemperature, maxtemperature, minhumidity, maxhumidity, maxcarbondioxide)
-	VALUES ('LxZA-29', 'h9U7jgpP7O', 6.9, 14.7, 51.1, 86.3, 34959);
-INSERT INTO Terrarium (eui, userid, mintemperature, maxtemperature, minhumidity, maxhumidity, maxcarbondioxide)
-	VALUES ('NYtB-18', 'ABz0sjHysK', 17.2, 22.5, 42.3, 72.7, 9096);
-INSERT INTO Terrarium (eui, userid, mintemperature, maxtemperature, minhumidity, maxhumidity, maxcarbondioxide)
-	VALUES ('Fanx-98', 'dnByXE3tEb', 16.7, 46.3, 57.2, 76.7, 26604);
-INSERT INTO Terrarium (eui, userid, mintemperature, maxtemperature, minhumidity, maxhumidity, maxcarbondioxide)
-	VALUES ('YJam-39', 'dnByXE3tEb', 17.6, 23.4, 51.6, 79.8, 31473);
-INSERT INTO Terrarium (eui, userid, mintemperature, maxtemperature, minhumidity, maxhumidity, maxcarbondioxide)
-	VALUES ('S0xa-59', 'QC4v3jolrX', 7.2, 10.8, 54.1, 83.6, 46704);
-INSERT INTO Terrarium (eui, userid, mintemperature, maxtemperature, minhumidity, maxhumidity, maxcarbondioxide)
-	VALUES ('B0wJ-99', 'cY1XoKyg7d', 19.8, 18.2, 49.4, 76.5, 41400);
-INSERT INTO Terrarium (eui, userid, mintemperature, maxtemperature, minhumidity, maxhumidity, maxcarbondioxide)
-	VALUES ('BdA5-36', 'dnByXE3tEb', 5.8, 29.6, 58.5, 78.6, 18796);
-INSERT INTO Terrarium (eui, userid, mintemperature, maxtemperature, minhumidity, maxhumidity, maxcarbondioxide)
-	VALUES ('Szpy-21', 'h9U7jgpP7O', NULL, NULL, NULL, NULL, 7042);
-INSERT INTO Terrarium (eui, userid, mintemperature, maxtemperature, minhumidity, maxhumidity, maxcarbondioxide)
-	VALUES ('ZLFV-16', 'NCT8Alkwhi', 12.0, 44.7, 42.6, 89.4, 10134);
+	VALUES ('BaAo-31', 'HPjp69334J', 16.8, 22.6, 42.8, 72.9, 20203),
+	       ('XwWI-98', 'h9U7jgpP7O', 15.4, 19.9, 59.4, 89.4, 38307),
+	       ('SkY5-39', 'QC4v3jolrX', 9.9, 35.6, 57.9, 88.3, 38696),
+	       ('HeMh-40', 'ABz0sjHysK', NULL, NULL, NULL, NULL, 14240),
+	       ('UFVD-98', 'HPjp69334J', 15.2, 48.2, 42.6, 73.8, 45426),
+	       ('NWuH-01', 'ABz0sjHysK', 14.2, 49.1, 45.4, 86.1, 48890),
+	       ('R1UT-99', 'QC4v3jolrX', 6.8, 36.6, 57.2, 78.0, 42116),
+	       ('OV81-11', 'ABz0sjHysK', 11.2, 18.1, 59.0, 84.2, 23925),
+	       ('UXm7-84', 'LpOAaA3hFq', 13.5, 34.1, 44.7, 81.0, 16267),
+	       ('LF1N-91', 'h9U7jgpP7O', 12.9, 48.1, 40.9, 79.4, NULL),
+	       ('LvG7-17', 'LpOAaA3hFq', 15.2, 42.9, 49.0, 78.2, 2576),
+	       ('EbYi-66', 'NCT8Alkwhi', 10.9, 35.6, 42.8, 87.6, 21499),
+	       ('BKLj-35', 'ABz0sjHysK', 7.7, 24.6, 49.4, 86.0, 30518),
+	       ('LrtC-56', 'h9U7jgpP7O', 10.7, 31.2, 49.2, 79.9, 27746),
+	       ('PKwI-89', 'NCT8Alkwhi', 11.1, 44.6, 52.9, 71.0, 16796),
+	       ('WCW2-24', 'ABz0sjHysK', 18.6, 11.9, 54.4, 87.4, NULL),
+	       ('Yep9-86', 'ABz0sjHysK', 15.1, 20.2, 58.2, 70.1, 12052),
+	       ('ZLM2-14', 'dnByXE3tEb', 20.0, 47.1, 53.1, 87.6, 26709),
+	       ('OxAg-70', 'LpOAaA3hFq', 7.2, 18.3, 56.7, 86.4, 16849),
+	       ('Awfj-46', 'NCT8Alkwhi', 11.1, 17.3, 56.8, 87.7, 12134),
+	       ('GEwu-61', 'ABz0sjHysK', 15.4, 20.1, 48.3, 80.4, 40733),
+	       ('BV6x-27', 'ABz0sjHysK', 9.1, 19.5, 47.1, 83.1, 36655),
+	       ('Y4va-33', 'h9U7jgpP7O', 15, 16, 55.5, 87.7, 26516),
+	       ('BkKq-77', 'h9U7jgpP7O', 19.6, 34.2, 49.9, 79.2, 20465),
+	       ('DCi5-75', 'ABz0sjHysK', 11.0, 29.6, 46.3, 83.6, 29437),
+	       ('K3m0-75', 'QC4v3jolrX', 14.7, 23.1, 43.6, 88.0, 34768),
+	       ('FJhn-98', 'QC4v3jolrX', 17.1, 30.2, 42.7, 87.2, 19462),
+	       ('WuFm-44', 'x5wdNhBkzG', 7.2, 29.6, 58.0, 76.1, 3435),
+	       ('YuEv-26', 'ABz0sjHysK', 9.4, 24.5, 49.2, 88.6, 1724),
+	       ('Zxak-04', 'ABz0sjHysK', 9.1, 12.5, 44.6, 70.3, NULL),
+	       ('D6cx-39', 'NCT8Alkwhi', 14.4, 16.4, 59.6, 71.7, NULL),
+	       ('D9ff-34', 'h9U7jgpP7O', 5.8, 46.4, 47.4, 74.5, 20998),
+	       ('Wibg-64', 'dnByXE3tEb', NULL, NULL, NULL, NULL, 797),
+	       ('UpdK-96', 'dnByXE3tEb', 11.2, 19.2, 41.7, 83.7, 33031),
+	       ('I6wT-07', 'NCT8Alkwhi', 12.0, 16.9, 57.7, 81.0, 17793),
+	       ('CJ8z-80', 'x5wdNhBkzG', 18.8, 28.6, 57.3, 76.7, 20390),
+	       ('VdKr-11', 'QC4v3jolrX', 16.7, 20.8, 49.5, 76.3, 31949),
+	       ('YDFW-91', 'LpOAaA3hFq', 8.8, 28.0, 57.0, 73.5, 46083),
+	       ('X7GN-85', 'LpOAaA3hFq', 19.5, 42.7, 53.5, 83.3, 30305),
+	       ('Vimn-58', 'LpOAaA3hFq', 16, 17, 42.6, 85.0, 24316),
+	       ('JaaX-51', 'cY1XoKyg7d', 15.7, 24.9, 43.9, 82.8, 48442),
+	       ('LxZA-29', 'h9U7jgpP7O', 6.9, 14.7, 51.1, 86.3, 34959),
+	       ('NYtB-18', 'ABz0sjHysK', 17.2, 22.5, 42.3, 72.7, 9096),
+	       ('Fanx-98', 'dnByXE3tEb', 16.7, 46.3, 57.2, 76.7, 26604),
+	       ('YJam-39', 'dnByXE3tEb', 17.6, 23.4, 51.6, 79.8, 31473),
+	       ('S0xa-59', 'QC4v3jolrX', 7.2, 10.8, 54.1, 83.6, 46704),
+	       ('B0wJ-99', 'cY1XoKyg7d', 19.8, 18.2, 49.4, 76.5, 41400),
+	       ('BdA5-36', 'dnByXE3tEb', 5.8, 29.6, 58.5, 78.6, 18796),
+	       ('Szpy-21', 'h9U7jgpP7O', NULL, NULL, NULL, NULL, 7042),
+	       ('ZLFV-16', 'NCT8Alkwhi', 12.0, 44.7, 42.6, 89.4, 10134);
 
 -- ANIMALS
 INSERT INTO Animal (eui, name, age, species, sex, isshedding, ishibernating, hasoffspring)
-	VALUES ('CJ8z-80', 'Weylin', 562, 'Vulpes vulpes', 'M', FALSE, FALSE, FALSE);
-INSERT INTO Animal (eui, name, age, species, sex, isshedding, ishibernating, hasoffspring)
-	VALUES ('UXm7-84', 'Justus', 599, 'Cygnus atratus', 'M', FALSE, FALSE, FALSE);
-INSERT INTO Animal (eui, name, age, species, sex, isshedding, ishibernating, hasoffspring)
-	VALUES ('D6cx-39', 'Trstram', 467, 'Phalacrocorax brasilianus', 'M', TRUE, FALSE, FALSE);
-INSERT INTO Animal (eui, name, age, species, sex, isshedding, ishibernating, hasoffspring)
-	VALUES ('S0xa-59', 'Theobald', 291, 'Sciurus vulgaris', 'M', FALSE, FALSE, FALSE);
-INSERT INTO Animal (eui, name, age, species, sex, isshedding, ishibernating, hasoffspring)
-	VALUES ('Zxak-04', 'Danella', 800, 'Myotis lucifugus', 'F', FALSE, FALSE, FALSE);
-INSERT INTO Animal (eui, name, age, species, sex, isshedding, ishibernating, hasoffspring)
-	VALUES ('NWuH-01', 'Celestina', 613, 'Delphinus delphis', 'F', TRUE, FALSE, FALSE);
-INSERT INTO Animal (eui, name, age, species, sex, isshedding, ishibernating, hasoffspring)
-	VALUES ('DCi5-75', 'Rubetta', 339, 'Equus hemionus', 'F', FALSE, FALSE, FALSE);
-INSERT INTO Animal (eui, name, age, species, sex, isshedding, ishibernating, hasoffspring)
-	VALUES ('LF1N-91', 'Darill', 160, 'Corallus hortulanus cooki', 'M', FALSE, FALSE, FALSE);
-INSERT INTO Animal (eui, name, age, species, sex, isshedding, ishibernating, hasoffspring)
-	VALUES ('VdKr-11', 'Tarrance', 563, 'Tursiops truncatus', 'M', FALSE, FALSE, FALSE);
-INSERT INTO Animal (eui, name, age, species, sex, isshedding, ishibernating, hasoffspring)
-	VALUES ('PKwI-89', 'Gary', 312, 'Felis silvestris lybica', 'M', TRUE, TRUE, FALSE);
-INSERT INTO Animal (eui, name, age, species, sex, isshedding, ishibernating, hasoffspring)
-	VALUES ('Yep9-86', 'Aaren', 382, 'Tachyglossus aculeatus', 'F', FALSE, FALSE, FALSE);
-INSERT INTO Animal (eui, name, age, species, sex, isshedding, ishibernating, hasoffspring)
-	VALUES ('SkY5-39', 'Sargent', 214, 'Catharacta skua', 'M', FALSE, FALSE, FALSE);
-INSERT INTO Animal (eui, name, age, species, sex, isshedding, ishibernating, hasoffspring)
-	VALUES ('CJ8z-80', 'Syman', 194, 'Pelecanus conspicillatus', 'M', FALSE, FALSE, FALSE);
-INSERT INTO Animal (eui, name, age, species, sex, isshedding, ishibernating, hasoffspring)
-	VALUES ('UpdK-96', 'Chiarra', 418, 'Sciurus niger', 'F', TRUE, TRUE, TRUE);
-INSERT INTO Animal (eui, name, age, species, sex, isshedding, ishibernating, hasoffspring)
-	VALUES ('Awfj-46', 'Culver', 28, 'Oreamnos americanus', 'M', FALSE, TRUE, FALSE);
-INSERT INTO Animal (eui, name, age, species, sex, isshedding, ishibernating, hasoffspring)
-	VALUES ('B0wJ-99', 'Augusto', 290, 'Felis wiedi or Leopardus weidi', 'M', TRUE, TRUE, FALSE);
-INSERT INTO Animal (eui, name, age, species, sex, isshedding, ishibernating, hasoffspring)
-	VALUES ('VdKr-11', 'Evvie', 43, 'Canis dingo', 'F', FALSE, TRUE, FALSE);
-INSERT INTO Animal (eui, name, age, species, sex, isshedding, ishibernating, hasoffspring)
-	VALUES ('Y4va-33', 'Madelena', 856, 'Cynictis penicillata', 'F', FALSE, FALSE, FALSE);
-INSERT INTO Animal (eui, name, age, species, sex, isshedding, ishibernating, hasoffspring)
-	VALUES ('UpdK-96', 'Benji', 913, 'Pteropus rufus', 'M', FALSE, TRUE, FALSE);
-INSERT INTO Animal (eui, name, age, species, sex, isshedding, ishibernating, hasoffspring)
-	VALUES ('LrtC-56', 'Fernanda', 408, 'Coluber constrictor', 'F', FALSE, FALSE, FALSE);
-INSERT INTO Animal (eui, name, age, species, sex, isshedding, ishibernating, hasoffspring)
-	VALUES ('ZLM2-14', 'Marleen', 17, 'Anser anser', 'F', FALSE, FALSE, FALSE);
-INSERT INTO Animal (eui, name, age, species, sex, isshedding, ishibernating, hasoffspring)
-	VALUES ('R1UT-99', 'Gretal', 800, 'Alligator mississippiensis', 'F', TRUE, FALSE, TRUE);
-INSERT INTO Animal (eui, name, age, species, sex, isshedding, ishibernating, hasoffspring)
-	VALUES ('OV81-11', 'Sadella', 854, 'Conolophus subcristatus', 'F', FALSE, FALSE, FALSE);
-INSERT INTO Animal (eui, name, age, species, sex, isshedding, ishibernating, hasoffspring)
-	VALUES ('BKLj-35', 'Sidoney', 782, 'Mirounga leonina', 'F', TRUE, FALSE, FALSE);
-INSERT INTO Animal (eui, name, age, species, sex, isshedding, ishibernating, hasoffspring)
-	VALUES ('YDFW-91', 'Emlen', 634, 'Eudyptula minor', 'M', TRUE, FALSE, TRUE);
-INSERT INTO Animal (eui, name, age, species, sex, isshedding, ishibernating, hasoffspring)
-	VALUES ('PKwI-89', 'Herculie', 822, 'Tamiasciurus hudsonicus', 'M', FALSE, TRUE, FALSE);
-INSERT INTO Animal (eui, name, age, species, sex, isshedding, ishibernating, hasoffspring)
-	VALUES ('R1UT-99', 'Richie', 791, 'Merops sp.', 'M', TRUE, TRUE, FALSE);
-INSERT INTO Animal (eui, name, age, species, sex, isshedding, ishibernating, hasoffspring)
-	VALUES ('ZLM2-14', 'Giana', 100, 'Felis silvestris lybica', 'F', FALSE, FALSE, FALSE);
-INSERT INTO Animal (eui, name, age, species, sex, isshedding, ishibernating, hasoffspring)
-	VALUES ('LrtC-56', 'Burton', 566, 'Macaca radiata', 'M', TRUE, TRUE, TRUE);
-INSERT INTO Animal (eui, name, age, species, sex, isshedding, ishibernating, hasoffspring)
-	VALUES ('BkKq-77', 'Abbey', 949, 'Papio cynocephalus', 'M', FALSE, FALSE, FALSE);
-INSERT INTO Animal (eui, name, age, species, sex, isshedding, ishibernating, hasoffspring)
-	VALUES ('B0wJ-99', 'Alfonse', 517, 'Larus fuliginosus', 'M', FALSE, TRUE, FALSE);
-INSERT INTO Animal (eui, name, age, species, sex, isshedding, ishibernating, hasoffspring)
-	VALUES ('D9ff-34', 'Husain', 718, 'Merops nubicus', 'M', FALSE, TRUE, TRUE);
-INSERT INTO Animal (eui, name, age, species, sex, isshedding, ishibernating, hasoffspring)
-	VALUES ('FJhn-98', 'Chen', 273, 'Columba palumbus', 'M', TRUE, TRUE, FALSE);
-INSERT INTO Animal (eui, name, age, species, sex, isshedding, ishibernating, hasoffspring)
-	VALUES ('X7GN-85', 'Carlita', 953, 'Ursus maritimus', 'F', FALSE, FALSE, FALSE);
-INSERT INTO Animal (eui, name, age, species, sex, isshedding, ishibernating, hasoffspring)
-	VALUES ('D9ff-34', 'Kordula', 997, 'Ephippiorhynchus mycteria', 'F', FALSE, FALSE, FALSE);
-INSERT INTO Animal (eui, name, age, species, sex, isshedding, ishibernating, hasoffspring)
-	VALUES ('D9ff-34', 'Kevin', 385, 'Nyctanassa violacea', 'M', FALSE, FALSE, FALSE);
-INSERT INTO Animal (eui, name, age, species, sex, isshedding, ishibernating, hasoffspring)
-	VALUES ('K3m0-75', 'Willi', 892, 'Paradoxurus hermaphroditus', 'F', FALSE, TRUE, FALSE);
-INSERT INTO Animal (eui, name, age, species, sex, isshedding, ishibernating, hasoffspring)
-	VALUES ('NWuH-01', 'Noble', 508, 'Chelodina longicollis', 'M', FALSE, FALSE, FALSE);
-INSERT INTO Animal (eui, name, age, species, sex, isshedding, ishibernating, hasoffspring)
-	VALUES ('ZLM2-14', 'June', 898, 'Deroptyus accipitrinus', 'F', FALSE, FALSE, FALSE);
-INSERT INTO Animal (eui, name, age, species, sex, isshedding, ishibernating, hasoffspring)
-	VALUES ('UXm7-84', 'Teddy', 914, 'Phascogale calura', 'M', FALSE, FALSE, FALSE);
-INSERT INTO Animal (eui, name, age, species, sex, isshedding, ishibernating, hasoffspring)
-	VALUES ('X7GN-85', 'Linzy', 229, 'unavailable', 'F', FALSE, FALSE, FALSE);
-INSERT INTO Animal (eui, name, age, species, sex, isshedding, ishibernating, hasoffspring)
-	VALUES ('UpdK-96', 'Rita', 400, 'Isoodon obesulus', 'F', TRUE, TRUE, TRUE);
-INSERT INTO Animal (eui, name, age, species, sex, isshedding, ishibernating, hasoffspring)
-	VALUES ('Zxak-04', 'Milton', 715, 'Choloepus hoffmani', 'M', FALSE, FALSE, FALSE);
-INSERT INTO Animal (eui, name, age, species, sex, isshedding, ishibernating, hasoffspring)
-	VALUES ('DCi5-75', 'Stefania', 299, 'Phoeniconaias minor', 'F', FALSE, FALSE, FALSE);
-INSERT INTO Animal (eui, name, age, species, sex, isshedding, ishibernating, hasoffspring)
-	VALUES ('DCi5-75', 'Urban', 237, 'Vanellus armatus', 'M', FALSE, FALSE, FALSE);
-INSERT INTO Animal (eui, name, age, species, sex, isshedding, ishibernating, hasoffspring)
-	VALUES ('B0wJ-99', 'Karleen', 785, 'Limosa haemastica', 'F', TRUE, TRUE, TRUE);
-INSERT INTO Animal (eui, name, age, species, sex, isshedding, ishibernating, hasoffspring)
-	VALUES ('SkY5-39', 'Martita', 515, 'Oxybelis fulgidus', 'F', FALSE, FALSE, FALSE);
-INSERT INTO Animal (eui, name, age, species, sex, isshedding, ishibernating, hasoffspring)
-	VALUES ('UpdK-96', 'Roland', 716, 'Dipodomys deserti', 'M', FALSE, FALSE, TRUE);
-INSERT INTO Animal (eui, name, age, species, sex, isshedding, ishibernating, hasoffspring)
-	VALUES ('ZLFV-16', 'Raphael', 639, 'unavailable', 'M', TRUE, FALSE, FALSE);
-INSERT INTO Animal (eui, name, age, species, sex, isshedding, ishibernating, hasoffspring)
-	VALUES ('BdA5-36', 'Emory', 990, 'Dendrocitta vagabunda', 'M', FALSE, TRUE, TRUE);
-INSERT INTO Animal (eui, name, age, species, sex, isshedding, ishibernating, hasoffspring)
-	VALUES ('LF1N-91', 'Janifer', 483, 'Herpestes javanicus', 'F', TRUE, TRUE, FALSE);
-INSERT INTO Animal (eui, name, age, species, sex, isshedding, ishibernating, hasoffspring)
-	VALUES ('Szpy-21', 'Hedwiga', 524, 'Buteo regalis', 'F', FALSE, TRUE, TRUE);
-INSERT INTO Animal (eui, name, age, species, sex, isshedding, ishibernating, hasoffspring)
-	VALUES ('EbYi-66', 'Corrie', 900, 'Centrocercus urophasianus', 'M', FALSE, FALSE, FALSE);
-INSERT INTO Animal (eui, name, age, species, sex, isshedding, ishibernating, hasoffspring)
-	VALUES ('NYtB-18', 'Jodi', 764, 'Paradoxurus hermaphroditus', 'F', FALSE, FALSE, FALSE);
-INSERT INTO Animal (eui, name, age, species, sex, isshedding, ishibernating, hasoffspring)
-	VALUES ('UXm7-84', 'Tracey', 733, 'Epicrates cenchria maurus', 'M', FALSE, FALSE, FALSE);
-INSERT INTO Animal (eui, name, age, species, sex, isshedding, ishibernating, hasoffspring)
-	VALUES ('ZLFV-16', 'Cynde', 19, 'Trichoglossus haematodus moluccanus', 'F', FALSE, TRUE, FALSE);
-INSERT INTO Animal (eui, name, age, species, sex, isshedding, ishibernating, hasoffspring)
-	VALUES ('R1UT-99', 'Dugald', 464, 'Phoenicopterus ruber', 'M', FALSE, FALSE, TRUE);
-INSERT INTO Animal (eui, name, age, species, sex, isshedding, ishibernating, hasoffspring)
-	VALUES ('R1UT-99', 'Olivier', 95, 'Phalacrocorax niger', 'M', FALSE, FALSE, FALSE);
-INSERT INTO Animal (eui, name, age, species, sex, isshedding, ishibernating, hasoffspring)
-	VALUES ('GEwu-61', 'Benn', 107, 'Anastomus oscitans', 'M', FALSE, FALSE, FALSE);
-INSERT INTO Animal (eui, name, age, species, sex, isshedding, ishibernating, hasoffspring)
-	VALUES ('HeMh-40', 'Mathilde', 187, 'Semnopithecus entellus', 'F', FALSE, FALSE, FALSE);
-INSERT INTO Animal (eui, name, age, species, sex, isshedding, ishibernating, hasoffspring)
-	VALUES ('S0xa-59', 'Dre', 451, 'Aonyx cinerea', 'F', FALSE, FALSE, FALSE);
-INSERT INTO Animal (eui, name, age, species, sex, isshedding, ishibernating, hasoffspring)
-	VALUES ('BkKq-77', 'Court', 55, 'Passer domesticus', 'M', FALSE, TRUE, FALSE);
-INSERT INTO Animal (eui, name, age, species, sex, isshedding, ishibernating, hasoffspring)
-	VALUES ('BV6x-27', 'Tuesday', 401, 'Crotalus triseriatus', 'F', TRUE, FALSE, TRUE);
-INSERT INTO Animal (eui, name, age, species, sex, isshedding, ishibernating, hasoffspring)
-	VALUES ('YJam-39', 'Philipa', 698, 'Toxostoma curvirostre', 'F', TRUE, TRUE, TRUE);
-INSERT INTO Animal (eui, name, age, species, sex, isshedding, ishibernating, hasoffspring)
-	VALUES ('YJam-39', 'Monroe', 800, 'Platalea leucordia', 'M', TRUE, TRUE, TRUE);
-INSERT INTO Animal (eui, name, age, species, sex, isshedding, ishibernating, hasoffspring)
-	VALUES ('YuEv-26', 'Olympie', 608, 'Eudyptula minor', 'F', TRUE, FALSE, FALSE);
-INSERT INTO Animal (eui, name, age, species, sex, isshedding, ishibernating, hasoffspring)
-	VALUES ('BkKq-77', 'Meagan', 606, 'Paroaria gularis', 'F', TRUE, FALSE, FALSE);
-INSERT INTO Animal (eui, name, age, species, sex, isshedding, ishibernating, hasoffspring)
-	VALUES ('UpdK-96', 'Jobi', 256, 'Vanessa indica', 'F', FALSE, FALSE, FALSE);
-INSERT INTO Animal (eui, name, age, species, sex, isshedding, ishibernating, hasoffspring)
-	VALUES ('UXm7-84', 'Corey', 363, 'Francolinus swainsonii', 'M', FALSE, FALSE, FALSE);
-INSERT INTO Animal (eui, name, age, species, sex, isshedding, ishibernating, hasoffspring)
-	VALUES ('Fanx-98', 'Forrest', 458, 'Anas punctata', 'M', FALSE, FALSE, FALSE);
-INSERT INTO Animal (eui, name, age, species, sex, isshedding, ishibernating, hasoffspring)
-	VALUES ('Y4va-33', 'Lance', 251, 'Paraxerus cepapi', 'M', FALSE, FALSE, TRUE);
-INSERT INTO Animal (eui, name, age, species, sex, isshedding, ishibernating, hasoffspring)
-	VALUES ('Yep9-86', 'Demetris', 836, 'Epicrates cenchria maurus', 'M', FALSE, FALSE, FALSE);
-INSERT INTO Animal (eui, name, age, species, sex, isshedding, ishibernating, hasoffspring)
-	VALUES ('Zxak-04', 'Laurene', 705, 'Isoodon obesulus', 'F', TRUE, TRUE, FALSE);
-INSERT INTO Animal (eui, name, age, species, sex, isshedding, ishibernating, hasoffspring)
-	VALUES ('BdA5-36', 'Dave', 217, 'Cacatua tenuirostris', 'M', FALSE, FALSE, TRUE);
-INSERT INTO Animal (eui, name, age, species, sex, isshedding, ishibernating, hasoffspring)
-	VALUES ('GEwu-61', 'Jamie', 499, 'Prionace glauca', 'F', FALSE, FALSE, FALSE);
-INSERT INTO Animal (eui, name, age, species, sex, isshedding, ishibernating, hasoffspring)
-	VALUES ('WCW2-24', 'Kaia', 911, 'Estrilda erythronotos', 'F', FALSE, TRUE, TRUE);
-INSERT INTO Animal (eui, name, age, species, sex, isshedding, ishibernating, hasoffspring)
-	VALUES ('DCi5-75', 'Kai', 278, 'unavailable', 'F', FALSE, FALSE, FALSE);
-INSERT INTO Animal (eui, name, age, species, sex, isshedding, ishibernating, hasoffspring)
-	VALUES ('YuEv-26', 'Junia', 943, 'Acrobates pygmaeus', 'F', FALSE, TRUE, FALSE);
-INSERT INTO Animal (eui, name, age, species, sex, isshedding, ishibernating, hasoffspring)
-	VALUES ('BaAo-31', 'Zedekiah', 931, 'Lamprotornis chalybaeus', 'M', FALSE, FALSE, FALSE);
-INSERT INTO Animal (eui, name, age, species, sex, isshedding, ishibernating, hasoffspring)
-	VALUES ('Szpy-21', 'Delilah', 712, 'Phoca vitulina', 'F', FALSE, TRUE, TRUE);
-INSERT INTO Animal (eui, name, age, species, sex, isshedding, ishibernating, hasoffspring)
-	VALUES ('Zxak-04', 'Cyndy', 514, 'Merops bullockoides', 'F', FALSE, TRUE, FALSE);
-INSERT INTO Animal (eui, name, age, species, sex, isshedding, ishibernating, hasoffspring)
-	VALUES ('HeMh-40', 'Arlie', 565, 'Trichosurus vulpecula', 'F', TRUE, TRUE, TRUE);
-INSERT INTO Animal (eui, name, age, species, sex, isshedding, ishibernating, hasoffspring)
-	VALUES ('UXm7-84', 'Abbe', 379, 'Equus hemionus', 'M', FALSE, FALSE, FALSE);
-INSERT INTO Animal (eui, name, age, species, sex, isshedding, ishibernating, hasoffspring)
-	VALUES ('Y4va-33', 'Rustin', 805, 'Anastomus oscitans', 'M', FALSE, FALSE, FALSE);
-INSERT INTO Animal (eui, name, age, species, sex, isshedding, ishibernating, hasoffspring)
-	VALUES ('BdA5-36', 'Gunter', 185, 'Actophilornis africanus', 'M', FALSE, FALSE, FALSE);
-INSERT INTO Animal (eui, name, age, species, sex, isshedding, ishibernating, hasoffspring)
-	VALUES ('LrtC-56', 'Mora', 478, 'Tockus erythrorhyncus', 'F', FALSE, FALSE, FALSE);
-INSERT INTO Animal (eui, name, age, species, sex, isshedding, ishibernating, hasoffspring)
-	VALUES ('D9ff-34', 'Gillie', 976, 'Vanellus armatus', 'F', FALSE, FALSE, TRUE);
-INSERT INTO Animal (eui, name, age, species, sex, isshedding, ishibernating, hasoffspring)
-	VALUES ('YJam-39', 'Jessee', 389, 'Crotalus triseriatus', 'M', FALSE, FALSE, FALSE);
-INSERT INTO Animal (eui, name, age, species, sex, isshedding, ishibernating, hasoffspring)
-	VALUES ('VdKr-11', 'Teodoro', 515, 'Cordylus giganteus', 'M', FALSE, FALSE, FALSE);
-INSERT INTO Animal (eui, name, age, species, sex, isshedding, ishibernating, hasoffspring)
-	VALUES ('OxAg-70', 'Brendan', 344, 'Pseudalopex gymnocercus', 'M', FALSE, FALSE, FALSE);
-INSERT INTO Animal (eui, name, age, species, sex, isshedding, ishibernating, hasoffspring)
-	VALUES ('BaAo-31', 'Alberik', 367, 'Acrobates pygmaeus', 'M', FALSE, FALSE, FALSE);
-INSERT INTO Animal (eui, name, age, species, sex, isshedding, ishibernating, hasoffspring)
-	VALUES ('WCW2-24', 'Trenna', 254, 'Gyps bengalensis', 'F', TRUE, TRUE, TRUE);
-INSERT INTO Animal (eui, name, age, species, sex, isshedding, ishibernating, hasoffspring)
-	VALUES ('SkY5-39', 'Sula', 433, 'Procyon lotor', 'F', TRUE, TRUE, TRUE);
-INSERT INTO Animal (eui, name, age, species, sex, isshedding, ishibernating, hasoffspring)
-	VALUES ('CJ8z-80', 'Joellen', 134, 'Didelphis virginiana', 'F', FALSE, FALSE, TRUE);
-INSERT INTO Animal (eui, name, age, species, sex, isshedding, ishibernating, hasoffspring)
-	VALUES ('OxAg-70', 'Alfredo', 685, 'Bos mutus', 'M', TRUE, FALSE, TRUE);
-INSERT INTO Animal (eui, name, age, species, sex, isshedding, ishibernating, hasoffspring)
-	VALUES ('Awfj-46', 'Karlis', 910, 'Herpestes javanicus', 'M', TRUE, TRUE, FALSE);
-INSERT INTO Animal (eui, name, age, species, sex, isshedding, ishibernating, hasoffspring)
-	VALUES ('LvG7-17', 'Denys', 289, 'Ictonyx striatus', 'M', FALSE, FALSE, FALSE);
-INSERT INTO Animal (eui, name, age, species, sex, isshedding, ishibernating, hasoffspring)
-	VALUES ('FJhn-98', 'Carlen', 747, 'Gabianus pacificus', 'F', FALSE, TRUE, TRUE);
-INSERT INTO Animal (eui, name, age, species, sex, isshedding, ishibernating, hasoffspring)
-	VALUES ('HeMh-40', 'Nathalia', 146, 'Oreotragus oreotragus', 'F', FALSE, TRUE, FALSE);
-INSERT INTO Animal (eui, name, age, species, sex, isshedding, ishibernating, hasoffspring)
-	VALUES ('LxZA-29', 'Neddie', 877, 'Oryx gazella', 'M', FALSE, TRUE, TRUE);
+	VALUES ('CJ8z-80', 'Weylin', 562, 'Vulpes vulpes', 'M', FALSE, FALSE, FALSE),
+	       ('UXm7-84', 'Justus', 599, 'Cygnus atratus', 'M', FALSE, FALSE, FALSE),
+	       ('D6cx-39', 'Trstram', 467, 'Phalacrocorax brasilianus', 'M', TRUE, FALSE, FALSE),
+	       ('S0xa-59', 'Theobald', 291, 'Sciurus vulgaris', 'M', FALSE, FALSE, FALSE),
+	       ('Zxak-04', 'Danella', 800, 'Myotis lucifugus', 'F', FALSE, FALSE, FALSE),
+	       ('NWuH-01', 'Celestina', 613, 'Delphinus delphis', 'F', TRUE, FALSE, FALSE),
+	       ('DCi5-75', 'Rubetta', 339, 'Equus hemionus', 'F', FALSE, FALSE, FALSE),
+	       ('LF1N-91', 'Darill', 160, 'Corallus hortulanus cooki', 'M', FALSE, FALSE, FALSE),
+	       ('VdKr-11', 'Tarrance', 563, 'Tursiops truncatus', 'M', FALSE, FALSE, FALSE),
+	       ('PKwI-89', 'Gary', 312, 'Felis silvestris lybica', 'M', TRUE, TRUE, FALSE),
+	       ('Yep9-86', 'Aaren', 382, 'Tachyglossus aculeatus', 'F', FALSE, FALSE, FALSE),
+	       ('SkY5-39', 'Sargent', 214, 'Catharacta skua', 'M', FALSE, FALSE, FALSE),
+	       ('CJ8z-80', 'Syman', 194, 'Pelecanus conspicillatus', 'M', FALSE, FALSE, FALSE),
+	       ('UpdK-96', 'Chiarra', 418, 'Sciurus niger', 'F', TRUE, TRUE, TRUE),
+	       ('Awfj-46', 'Culver', 28, 'Oreamnos americanus', 'M', FALSE, TRUE, FALSE),
+	       ('B0wJ-99', 'Augusto', 290, 'Felis wiedi or Leopardus weidi', 'M', TRUE, TRUE, FALSE),
+	       ('VdKr-11', 'Evvie', 43, 'Canis dingo', 'F', FALSE, TRUE, FALSE),
+	       ('Y4va-33', 'Madelena', 856, 'Cynictis penicillata', 'F', FALSE, FALSE, FALSE),
+	       ('UpdK-96', 'Benji', 913, 'Pteropus rufus', 'M', FALSE, TRUE, FALSE),
+	       ('LrtC-56', 'Fernanda', 408, 'Coluber constrictor', 'F', FALSE, FALSE, FALSE),
+	       ('ZLM2-14', 'Marleen', 17, 'Anser anser', 'F', FALSE, FALSE, FALSE),
+	       ('R1UT-99', 'Gretal', 800, 'Alligator mississippiensis', 'F', TRUE, FALSE, TRUE),
+	       ('OV81-11', 'Sadella', 854, 'Conolophus subcristatus', 'F', FALSE, FALSE, FALSE),
+	       ('BKLj-35', 'Sidoney', 782, 'Mirounga leonina', 'F', TRUE, FALSE, FALSE),
+	       ('YDFW-91', 'Emlen', 634, 'Eudyptula minor', 'M', TRUE, FALSE, TRUE),
+	       ('PKwI-89', 'Herculie', 822, 'Tamiasciurus hudsonicus', 'M', FALSE, TRUE, FALSE),
+	       ('R1UT-99', 'Richie', 791, 'Merops sp.', 'M', TRUE, TRUE, FALSE),
+	       ('ZLM2-14', 'Giana', 100, 'Felis silvestris lybica', 'F', FALSE, FALSE, FALSE),
+	       ('LrtC-56', 'Burton', 566, 'Macaca radiata', 'M', TRUE, TRUE, TRUE),
+	       ('BkKq-77', 'Abbey', 949, 'Papio cynocephalus', 'M', FALSE, FALSE, FALSE),
+	       ('B0wJ-99', 'Alfonse', 517, 'Larus fuliginosus', 'M', FALSE, TRUE, FALSE),
+	       ('D9ff-34', 'Husain', 718, 'Merops nubicus', 'M', FALSE, TRUE, TRUE),
+	       ('FJhn-98', 'Chen', 273, 'Columba palumbus', 'M', TRUE, TRUE, FALSE),
+	       ('X7GN-85', 'Carlita', 953, 'Ursus maritimus', 'F', FALSE, FALSE, FALSE),
+	       ('D9ff-34', 'Kordula', 997, 'Ephippiorhynchus mycteria', 'F', FALSE, FALSE, FALSE),
+	       ('D9ff-34', 'Kevin', 385, 'Nyctanassa violacea', 'M', FALSE, FALSE, FALSE),
+	       ('K3m0-75', 'Willi', 892, 'Paradoxurus hermaphroditus', 'F', FALSE, TRUE, FALSE),
+	       ('NWuH-01', 'Noble', 508, 'Chelodina longicollis', 'M', FALSE, FALSE, FALSE),
+	       ('ZLM2-14', 'June', 898, 'Deroptyus accipitrinus', 'F', FALSE, FALSE, FALSE),
+	       ('UXm7-84', 'Teddy', 914, 'Phascogale calura', 'M', FALSE, FALSE, FALSE),
+	       ('X7GN-85', 'Linzy', 229, 'unavailable', 'F', FALSE, FALSE, FALSE),
+	       ('UpdK-96', 'Rita', 400, 'Isoodon obesulus', 'F', TRUE, TRUE, TRUE),
+	       ('Zxak-04', 'Milton', 715, 'Choloepus hoffmani', 'M', FALSE, FALSE, FALSE),
+	       ('DCi5-75', 'Stefania', 299, 'Phoeniconaias minor', 'F', FALSE, FALSE, FALSE),
+	       ('DCi5-75', 'Urban', 237, 'Vanellus armatus', 'M', FALSE, FALSE, FALSE),
+	       ('B0wJ-99', 'Karleen', 785, 'Limosa haemastica', 'F', TRUE, TRUE, TRUE),
+	       ('SkY5-39', 'Martita', 515, 'Oxybelis fulgidus', 'F', FALSE, FALSE, FALSE),
+	       ('UpdK-96', 'Roland', 716, 'Dipodomys deserti', 'M', FALSE, FALSE, TRUE),
+	       ('ZLFV-16', 'Raphael', 639, 'unavailable', 'M', TRUE, FALSE, FALSE),
+	       ('BdA5-36', 'Emory', 990, 'Dendrocitta vagabunda', 'M', FALSE, TRUE, TRUE),
+	       ('LF1N-91', 'Janifer', 483, 'Herpestes javanicus', 'F', TRUE, TRUE, FALSE),
+	       ('Szpy-21', 'Hedwiga', 524, 'Buteo regalis', 'F', FALSE, TRUE, TRUE),
+	       ('EbYi-66', 'Corrie', 900, 'Centrocercus urophasianus', 'M', FALSE, FALSE, FALSE),
+	       ('NYtB-18', 'Jodi', 764, 'Paradoxurus hermaphroditus', 'F', FALSE, FALSE, FALSE),
+	       ('UXm7-84', 'Tracey', 733, 'Epicrates cenchria maurus', 'M', FALSE, FALSE, FALSE),
+	       ('ZLFV-16', 'Cynde', 19, 'Trichoglossus haematodus moluccanus', 'F', FALSE, TRUE, FALSE),
+	       ('R1UT-99', 'Dugald', 464, 'Phoenicopterus ruber', 'M', FALSE, FALSE, TRUE),
+	       ('R1UT-99', 'Olivier', 95, 'Phalacrocorax niger', 'M', FALSE, FALSE, FALSE),
+	       ('GEwu-61', 'Benn', 107, 'Anastomus oscitans', 'M', FALSE, FALSE, FALSE),
+	       ('HeMh-40', 'Mathilde', 187, 'Semnopithecus entellus', 'F', FALSE, FALSE, FALSE),
+	       ('S0xa-59', 'Dre', 451, 'Aonyx cinerea', 'F', FALSE, FALSE, FALSE),
+	       ('BkKq-77', 'Court', 55, 'Passer domesticus', 'M', FALSE, TRUE, FALSE),
+	       ('BV6x-27', 'Tuesday', 401, 'Crotalus triseriatus', 'F', TRUE, FALSE, TRUE),
+	       ('YJam-39', 'Philipa', 698, 'Toxostoma curvirostre', 'F', TRUE, TRUE, TRUE),
+	       ('YJam-39', 'Monroe', 800, 'Platalea leucordia', 'M', TRUE, TRUE, TRUE),
+	       ('YuEv-26', 'Olympie', 608, 'Eudyptula minor', 'F', TRUE, FALSE, FALSE),
+	       ('BkKq-77', 'Meagan', 606, 'Paroaria gularis', 'F', TRUE, FALSE, FALSE),
+	       ('UpdK-96', 'Jobi', 256, 'Vanessa indica', 'F', FALSE, FALSE, FALSE),
+	       ('UXm7-84', 'Corey', 363, 'Francolinus swainsonii', 'M', FALSE, FALSE, FALSE),
+	       ('Fanx-98', 'Forrest', 458, 'Anas punctata', 'M', FALSE, FALSE, FALSE),
+	       ('Y4va-33', 'Lance', 251, 'Paraxerus cepapi', 'M', FALSE, FALSE, TRUE),
+	       ('Yep9-86', 'Demetris', 836, 'Epicrates cenchria maurus', 'M', FALSE, FALSE, FALSE),
+	       ('Zxak-04', 'Laurene', 705, 'Isoodon obesulus', 'F', TRUE, TRUE, FALSE),
+	       ('BdA5-36', 'Dave', 217, 'Cacatua tenuirostris', 'M', FALSE, FALSE, TRUE),
+	       ('GEwu-61', 'Jamie', 499, 'Prionace glauca', 'F', FALSE, FALSE, FALSE),
+	       ('WCW2-24', 'Kaia', 911, 'Estrilda erythronotos', 'F', FALSE, TRUE, TRUE),
+	       ('DCi5-75', 'Kai', 278, 'unavailable', 'F', FALSE, FALSE, FALSE),
+	       ('YuEv-26', 'Junia', 943, 'Acrobates pygmaeus', 'F', FALSE, TRUE, FALSE),
+	       ('BaAo-31', 'Zedekiah', 931, 'Lamprotornis chalybaeus', 'M', FALSE, FALSE, FALSE),
+	       ('Szpy-21', 'Delilah', 712, 'Phoca vitulina', 'F', FALSE, TRUE, TRUE),
+	       ('Zxak-04', 'Cyndy', 514, 'Merops bullockoides', 'F', FALSE, TRUE, FALSE),
+	       ('HeMh-40', 'Arlie', 565, 'Trichosurus vulpecula', 'F', TRUE, TRUE, TRUE),
+	       ('UXm7-84', 'Abbe', 379, 'Equus hemionus', 'M', FALSE, FALSE, FALSE),
+	       ('Y4va-33', 'Rustin', 805, 'Anastomus oscitans', 'M', FALSE, FALSE, FALSE),
+	       ('BdA5-36', 'Gunter', 185, 'Actophilornis africanus', 'M', FALSE, FALSE, FALSE),
+	       ('LrtC-56', 'Mora', 478, 'Tockus erythrorhyncus', 'F', FALSE, FALSE, FALSE),
+	       ('D9ff-34', 'Gillie', 976, 'Vanellus armatus', 'F', FALSE, FALSE, TRUE),
+	       ('YJam-39', 'Jessee', 389, 'Crotalus triseriatus', 'M', FALSE, FALSE, FALSE),
+	       ('VdKr-11', 'Teodoro', 515, 'Cordylus giganteus', 'M', FALSE, FALSE, FALSE),
+	       ('OxAg-70', 'Brendan', 344, 'Pseudalopex gymnocercus', 'M', FALSE, FALSE, FALSE),
+	       ('BaAo-31', 'Alberik', 367, 'Acrobates pygmaeus', 'M', FALSE, FALSE, FALSE),
+	       ('WCW2-24', 'Trenna', 254, 'Gyps bengalensis', 'F', TRUE, TRUE, TRUE),
+	       ('SkY5-39', 'Sula', 433, 'Procyon lotor', 'F', TRUE, TRUE, TRUE),
+	       ('CJ8z-80', 'Joellen', 134, 'Didelphis virginiana', 'F', FALSE, FALSE, TRUE),
+	       ('OxAg-70', 'Alfredo', 685, 'Bos mutus', 'M', TRUE, FALSE, TRUE),
+	       ('Awfj-46', 'Karlis', 910, 'Herpestes javanicus', 'M', TRUE, TRUE, FALSE),
+	       ('LvG7-17', 'Denys', 289, 'Ictonyx striatus', 'M', FALSE, FALSE, FALSE),
+	       ('FJhn-98', 'Carlen', 747, 'Gabianus pacificus', 'F', FALSE, TRUE, TRUE),
+	       ('HeMh-40', 'Nathalia', 146, 'Oreotragus oreotragus', 'F', FALSE, TRUE, FALSE),
+	       ('LxZA-29', 'Neddie', 877, 'Oryx gazella', 'M', FALSE, TRUE, TRUE);
 
 -- MEASUREMENTS
 INSERT INTO Measurement (eui, timestamp, temperature, humidity, carbondioxide, servomoved, activity, lumen)

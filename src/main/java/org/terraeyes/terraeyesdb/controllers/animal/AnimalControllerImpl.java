@@ -26,6 +26,13 @@ public class AnimalControllerImpl implements AnimalController
     return animalDao.getUsersAnimals(userId);
   }
 
+  @GetMapping("/animal/{id}")
+  @Override
+  public Animal getAnimal(@PathVariable int id)
+  {
+    return animalDao.getAnimal(id);
+  }
+
   @PostMapping("/animals")
   @Override
   public boolean setAnimal(@RequestBody Animal animal)

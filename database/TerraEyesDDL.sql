@@ -4,7 +4,7 @@ CREATE SCHEMA terraeyes;
 SET SCHEMA 'terraeyes';
 
 /* User id kommer fra android? */
-CREATE TABLE "User" (
+CREATE TABLE "user" (
     id VARCHAR(64) PRIMARY KEY
 );
 
@@ -17,7 +17,7 @@ CREATE TABLE Terrarium (
     maxHumidity DECIMAL(3, 1),
     maxCarbonDioxide int,
 
-    FOREIGN KEY (userId) REFERENCES "User" (id) ON DELETE CASCADE
+    FOREIGN KEY (userId) REFERENCES "user" (id) ON DELETE CASCADE
 );
 
 CREATE TABLE Measurement (
